@@ -1,0 +1,62 @@
+
+  (A)	(A)	(B)	(B)
+? WHY	WHEN	WHERE	HOW
+
+# Xs 	Xs 	Xs 	Xs	
+
+1 Monarch power(2As) over Planet - REVENUE
+1 Bank method(2Bs) over Planet - REVENUE
+
+# Ys 	Ys 	Ys 	Ys	
+2 contract copies(2As) over Planet  - VALUES 
+2 hands shaking(2Bs)  over Planet - VALUES
+
+# Ys 	Ys 	Ys 	Ys	
+2 Bosses(2As) over Planet - VALUES
+2 lovers over(2Bs) planet - VALUES 
+
+# Zs3 	Zs3 	Zs3 	Zs	
+3 TV Screens(2As) over Planet - DISCOVERY
+3 Safety Assurances(2Bs) over Planet — DISCOVERY
+
+# Zs3 	Zs3 	Zs3 	Zs	
+3 Technologies Satellites and Earth Metals(2As) over Planet- DISCOVERY
+3 Technologies Computer clocks and Sensors(2Bs) over Planet - DISCOVERY
+
+# Zs3 	Zs3 	Zs3 	Zs 
+3 Surveys and Polls(2As) over Planet - DISCOVERY
+3 Software and Services(2Bs) over Planet - DISCOVERY
+
+# As	As	As	As	
+3 Wasted home cooked Meals(2As) over Planet - DIGEST
+3 Wasted takeout Meals(2Bs) over Planet - DIGEST
+
+# As	As	As	As	
+3 Insights characters "QUOTATIONS"(2As) over Planet - DIGEST
+3 Insights characters //COMMENTS/**/(2Bs) over Planet - DIGEST
+
+# As	As	As	As	
+3 Polar points Coordinates (2As) (ends and center) over Planet - DIGEST
+3 Voices from left, right and center(2Bs) over Planet - DIGEST
+
+4 Bs 	Bs 	Bs 	Bs	
+The People: Party (2As) over Planet - PURPOSE
+The People: Fight (2Bs) over Planet - PURPOSE
+
+4 Bs 	Bs 	Bs 	Bs	
+The People: Passion Art (2As) over Planet - PURPOSE
+The People: Passion Work (2Bs) over Planet - PURPOSE
+
+4 Bs 	Bs 	Bs 	Bs	
+The People: Learning (2As) over Planet - PURPOSE 
+The People: Farming (2Bs) over Planet - PURPOSE
+
+4 Bs 	Bs 	Bs 	Bs 	
+The People: Playing (2As) over Planet - PURPOSE 
+The People: Gliding (2Bs) over Planet - PURPOSE
+
+create a card design for each card using above description as template
+
+//Astro code
+Test Dec 31, Jan1, Mar 1, Feb 28, Jan 15
+

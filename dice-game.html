@@ -1,0 +1,2013 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Title</title>
+    <!--add more meta -->
+        <meta charset ="utf-8"/>
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="david kene" />
+        <style>
+            /* @font-face {font-family:'laila'; src: url('fonts/Laila/Laila-Regular.ttf'); font-weight:normal;} */
+            @font-face {font-family:'londrina'; src: url('fonts/Londrina_Outline/LondrinaOutline-Regular.ttf'); font-weight:normal;}
+            @font-face {font-family:'philosopher'; src: url('fonts/Philosopher/Philosopher-Bold.ttf'); font-weight:normal;}
+            /* @font-face {font-family:'telex'; src: url('fonts/Telex/Telex-Regular.ttf'); font-weight:normal;} */
+            /* @font-face {font-family:'roboto'; src: url('fonts/Roboto_Slab/RobotoSlab-Thin.ttf'); font-weight:normal;} */
+            @font-face {font-family:'LuckiestGuy'; src: url('fonts/LuckiestGuy/LuckiestGuy.ttf'); font-weight:normal;}  
+            /* @font-face {font-family:'roboto'; src: url('fonts/Roboto_Slab/RobotoSlab-Thin.ttf'); font-weight:normal;} */
+            @font-face {font-family:'roboto-bold'; src: url('fonts/Roboto_Slab/RobotoSlab-Bold.ttf'); font-weight:bold;}  
+        </style>
+        <style>
+            /* # {}
+            # {} */
+            * {margin: 0px; padding: 0px}
+            html{margin: 0px; padding: 0px}
+            body{margin: 0px; padding: 0px;  border: none; color: rgba(255, 220, 100,.9);background: rgba(10, 55, 77, 1);
+            
+                background-image: url('bacground2.png');
+                background-size: cover;
+            } 
+            hr {position:relative; display: block; bottom: 55%;left:0px; margin: 0% 0%;
+                animation: le-move 20s;
+                opacity:.85;
+                animation-iteration-count:100;
+                animation-direction: alternate-reverse; border: none;
+                
+            }
+         
+                .roll {
+                width: 25%;
+                /* margin:1% 0%; */
+                display: block;
+                position: absolute;
+                bottom: 0px;
+                font-size: 3rem;
+                border: none;
+                font-family:'LuckiestGuy';
+                text-transform: uppercase;
+               background: transparent;
+               background: goldenrod;
+               padding-top:1%;
+                color: rgb(70, 25, 94);
+                letter-spacing: 3px;
+                text-shadow:0px 2px 3px honeydew;
+            }
+
+            .second-roll {
+                width: 96%;
+                /* margin:1% 0%; */
+                display: block;
+                position: absolute;
+                bottom: 0px;
+                right: 5%;
+                font-size: 3rem;
+                border: none;
+                font-family:'LuckiestGuy';
+                text-transform: uppercase;
+               background: transparent;
+                color: rgba(25, 94, 25,1);
+                letter-spacing: 3px;
+                text-shadow:0px 2px 3px honeydew;
+            }
+            .container-roll {
+                  width: 25%;
+                /* margin:1% 0%; */
+                display: block;
+                position: absolute;
+                right: 0%;
+                bottom: 0px;
+               height: 60px;
+                border: none;
+                z-index: -111;
+               background: goldenrod;
+            }
+            .rollbackground {
+                width: 96%;
+                /* background: red; */
+                animation: lineargrade .01s;
+                animation-iteration-count:5000;
+                animation-direction: alternate-reverse;
+                animation-timing-function: ease-in-out;
+                /* position: absolute; */
+                 /* z-index: -111; */
+                opacity: .06;
+                padding: 0%;
+                height: 60px;
+            }
+            .next {
+                width: 100%;
+                margin:1% 0%;
+                display: block;
+                position: absolute;
+                bottom:0px;
+                font-size: 2rem;
+                border: none;
+                font-family: 'roboto-bold';
+                text-transform: uppercase;
+               background: goldenrod;
+               /* animation: linearGradient 1s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse; */
+            }
+
+          .space{display: block; width: 100%; height: 230px; margin-bottom: 0%;}
+          select{width:23%;}
+           h1{ letter-spacing:5px;padding: 2%; display: block; height: 35px;font-size: 2em; 
+            color: goldenrod;background: rgba(252, 245, 245, 0.952); margin: 0px; margin-bottom: 1%;font-family: 'londrina';}
+          #points {position: absolute; top:85px;left:20px;font-family:'LuckiestGuy'}
+          #timertoggle {position: absolute; top:85px;left:90%;font-family:'philosopher'; float: right;font-size: .5em}
+        
+
+           h2 {font-family:'LuckiestGuy';letter-spacing:5px; text-align: center;margin-bottom: 2%;}
+           .credits{letter-spacing:1px; position:absolute; top:55px; color: goldenrod; font-size: 10px;font-family: 'philosopher';}
+            .instructions { text-align: right; color: goldenrod; margin: 1%; position: absolute;top:10px; right:10px; font-size: 1em; font-family: 'roboto-bold';}
+           #instructions {font-size: .5em; color: green} /*add color gradient */
+
+            fieldset {margin: auto auto; text-align: center; border:none}
+            #roll1 ,#roll2 {font-family:'philosopher'; font-size: .4em; letter-spacing: 1px;text-align: center;}
+            div.dicearea {
+                width: 42%;    
+                /* margin:6% auto 10px; +4m */ 
+                font-size: 2rem;
+                font-family:'londrina';
+                display: block;
+                /* height: 200px; +4m */
+                background: transparent;
+                padding: 1%;
+                border: 0px solid goldenrod;
+                border-radius: 10px;
+                transform: scale(0.95);
+                position:absolute;
+                /* top: 60px; +4m */
+                /* left:30%; +4m */
+            }
+            div.dice {
+                float:left;
+                display: block;
+                text-align: center;
+                font-size: 4em;
+                width: 96%;
+                padding: 1%;
+                margin: 1%;
+                border: 0px solid goldenrod;
+                background-color: transparent;
+                color: white;
+            }
+            label.question {
+                text-align: center;
+                font-family:'philosopher';
+                font-size: 2em;
+                padding: 5%;
+               width: 50%;
+               display: block;
+               padding-top: 0px;
+                margin-top: 0%;
+                transform: scale(0.8);
+                position:absolute;
+                /* top: 320px;+4m */
+                top: 170px;
+                left: 32%;
+                text-align: left;
+                letter-spacing:2px;
+            }
+            .q-answer {
+                width:96%;
+                font-size: 1em;
+                padding: 1%;
+                margin: 5% 0% 2%;
+                font-family:'philosopher';
+                display: none;
+                height: 0px;
+                background: transparent;
+                border:none;
+            }
+            .diewrap {
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                position:relative;
+                width: 170px;
+                height:170px;
+                display: block;
+                float: left;
+               margin: 0% 2%;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+            .explain {clear:both; 
+                    display: block;
+                    margin: 3%;
+                    position: absolute;
+                    bottom: 0px;
+                    padding: 3%;
+                }
+            .colorwrap {
+                /* border-top: 5px solid  transparent;
+                border-bottom: 0px solid red;
+                border-left: 5px solid transparent;
+                border-right: 0px solid red; */
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                top: 0%;
+                left: 0%;
+                opacity: .5;
+                animation: animate-move 6s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap2 {
+                /* border-top: 1px solid  red;
+                border-bottom: 1px solid red;
+                border-left: 1px solid red;
+                border-right: 1px solid red; */
+                opacity: .5;
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                top: 0%;
+                left: 0%;
+                
+                animation: animate-move 8.6s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+
+            .colorwrap3 {
+                /* border-top: 1px solid  red;
+                border-bottom: 1px solid red;
+                border-left: 1px solid red;
+                border-right: 1px solid red; */
+                opacity: .5;
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                top: 0%;
+                left: 0%;
+                animation: animate-move 7.6s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap3 {
+                /* border-top: 1px solid  red;
+                border-bottom: 1px solid red;
+                border-left: 1px solid red;
+                border-right: 1px solid red; */
+                opacity: .5;
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                top: 0%;
+                left: 0%;
+                animation: animate-move 6.6s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap4 {
+                /* border-top: 1px solid  red;
+                border-bottom: 1px solid red;
+                border-left: 1px solid red;
+                border-right: 1px solid red; */
+                opacity: .5;
+                position:absolute;
+                width: 3px;
+                height: 3px;
+                top: 0%;
+                left: 0%;
+                animation: animate-move 5.6s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap5 {
+                /* border-top: 1px solid  red;
+                border-bottom: 1px solid red;
+                border-left: 1px solid red;
+                border-right: 1px solid red; */
+                opacity: .5;
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                top: 0%;
+                left: 0%;
+                animation: animate-move 4.6s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap6 {
+                /* border-top: 1px solid  red;
+                border-bottom: 1px solid red;
+                border-left: 1px solid red;
+                border-right: 1px solid red; */
+                opacity: .5;
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                top: 0%;
+                left: 0%;
+                animation: animate-move 3.6s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap7 {
+                /* border-top: 1px solid  red;
+                border-bottom: 1px solid red;
+                border-left: 1px solid red;
+                border-right: 1px solid red; */
+                opacity: .5;
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                top: 0%;
+                left: 0%;
+                animation: animate-move 2.6s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+
+            .colorwrap11 {
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                top: 0%;
+                left: 0%;
+                opacity: .5;
+                animation: animate-move2 2.5s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap12 {
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                top: 0%;
+                opacity: .5;
+                left: 0%;
+                animation: animate-move2 3.5s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap13 {
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                opacity: .5;
+                top: 0%;
+                left: 0%;
+                animation: animate-move2 4.5s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap14 {
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                opacity: .5;
+                top: 0%;
+                left: 0%;
+                animation: animate-move2 5.5s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap15 {
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                opacity: .5;
+                top: 0%;
+                left: 0%;
+                animation: animate-move2 6s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap16 {
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                opacity: .5;
+                top: 0%;
+                left: 0%;
+                animation: animate-move2 7s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+            }
+            .colorwrap17 {
+                position:absolute;
+                width: 1px;
+                height: 1px;
+                opacity: .5;
+                top: 0%;
+                left: 0%;
+                animation: animate-move2 8s;
+                animation-iteration-count:8;
+                animation-direction: alternate-reverse;
+                
+            }
+
+
+            @keyframes le-move {
+                0% {
+                    width: 100%;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: red;
+                    left: 0%;
+                    top: 0%;
+                    }
+
+                    10% {
+                    width: 100%;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: orange;
+                    left: 0%;
+                    top: 0%;
+                    }
+
+
+                    20% {
+                    width: 100%;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: yellow;
+                    right: 0%;
+                    top: 0%;
+                    }
+
+
+                    30% {
+                    width: 100%;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: green;
+                    left: 0%;
+                    top: 0%;
+                    }
+
+                    50% {
+                        width: 100%;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: blue;
+                    left: 0%;
+                    top: 0%;
+                    }
+
+                    70% {
+                        width: 100%;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: indigo;
+                    left: 0%;
+                    top: 0%;
+                    }
+
+                    100% {
+                        width: 100%;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: violet;
+                    left: 0%;
+                    top: 0%;
+                    }
+
+
+
+            }
+
+            @keyframes animate-move {
+                0% {
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: red;
+                    left: 0%;
+                    top: 0%;
+                }
+                12% {
+                    width: 100px;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: red;
+                    left: 50%;
+                    top: 0%;
+                }
+                24% {
+                   
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid orange; */
+                    background:  orange;
+                    left: 99%;
+                    top: 0%;
+                }
+                25% {
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid orange; */
+                    background:  orange;
+                    left: 99%;
+                    top: 0%;
+                }
+                26% {
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid orange; */
+                    background:  orange;
+                    left: 98%;
+                    top: 0%;
+                }
+                37% {
+                   width:1px;
+                    height: 100px;
+                    /* border: 5px solid red; */
+                    background: orange;
+                    left: 98%;
+                    top: 50%;
+                }
+                49% {
+                    width:1px;
+                    height: 1px;
+                    /* border: 5px solid yellow; */
+                    background:  yellow;
+                    left: 98%;
+                    top: 99%;
+                }
+                50% {
+                    width:1px;
+                    height: 1px;
+                    /* border: 5px solid yellow; */
+                    background:  yellow;
+                    left: 98%;
+                    top: 99%;
+                }
+                51% {
+                    width:1px;
+                    height: 1px;
+                    /* border: 5px solid yellow; */
+                    background:  yellow;
+                    left: 98%;
+                    top: 99%;
+                }
+                62% {
+                    width: 100px;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: yellow;
+                    left: 50%;
+                    top: 99%;
+                }
+                74% {
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid green; */
+                    background:  green;
+                    left: 0%;
+                    top: 99%;
+                }
+                75% {
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid green; */
+                    background:  green;
+                    left: 0%;
+                    top: 99%;
+                }
+                76% {
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid green; */
+                    background:  green;
+                    left: 0%;
+                    top: 99%;
+                }
+                87% {
+                    width: 1px;
+                    height: 100px;
+                    /* border: 5px solid red; */
+                    background: green;
+                    left: 0%;
+                    top: 50%;
+                }
+                99% {
+                    width: 1px;
+                    height: 1px;
+                    /* border-top: 5px solid blue; */
+                    background: blue;
+                    left: 0%;
+                    top: 0%;
+                }
+                100% {
+                    width: 1px;
+                    height: 1px;
+                    /* border-top: 5px solid blue; */
+                    background: blue;
+                    left: 0%;
+                    top: 0%;
+                }
+            }
+            
+            @keyframes animate-move2 {
+                0% {
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: red;
+                    left: 98%;
+                    top: 98%;
+                }
+                12% {
+                    width: 100px;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: red;
+                    left: 50%;
+                    top: 98%;
+                }
+                24% {
+                   
+                    width: 2px;
+                    height: 1px;
+                    /* border: 5px solid orange; */
+                    background:  orange;
+                    left: 0%;
+                    top: 98%;
+                }
+                25% {
+                    width: 3px;
+                    height: 1px;
+                    /* border: 5px solid orange; */
+                    background:  orange;
+                    left: 0%;
+                    top: 98%;
+                }
+                26% {
+                    width: 2px;
+                    height: 2px;
+                    /* border: 5px solid orange; */
+                    background:  orange;
+                    left: 0%;
+                    top: 98%;
+                }
+                37% {
+                   width:1px;
+                    height: 100px;
+                    /* border: 5px solid red; */
+                    background: orange;
+                    left: 0%;
+                    top: 50%;
+                }
+                49% {
+                    width:2px;
+                    height: 2px;
+                    /* border: 5px solid yellow; */
+                    background:  yellow;
+                    left: 0%;
+                    top: 0%;
+                }
+                50% {
+                    width:3px;
+                    height: 3px;
+                    /* border: 5px solid yellow; */
+                    background:  yellow;
+                    left: 0%;
+                    top: 0%;
+                }
+                51% {
+                    width:2px;
+                    height: 2px;
+                    /* border: 5px solid yellow; */
+                    background:  yellow;
+                    left: 0%;
+                    top: 0%;
+                }
+                62% {
+                    width: 100px;
+                    height: 1px;
+                    /* border: 5px solid red; */
+                    background: yellow;
+                    left: 50%;
+                    top: 0%;
+                }
+                74% {
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid green; */
+                    background:  green;
+                    left: 98%;
+                    top: 0%;
+                }
+                75% {
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid green; */
+                    background:  green;
+                    left: 98%;
+                    top: 0%;
+                }
+                76% {
+                    width: 1px;
+                    height: 1px;
+                    /* border: 5px solid green; */
+                    background:  green;
+                    left: 98%;
+                    top: 0%;
+                }
+                87% {
+                    width: 1px;
+                    height: 100px;
+                    /* border: 5px solid red; */
+                    background: green;
+                    left:98%;
+                    top: 50%;
+                }
+                99% {
+                    width: 1px;
+                    height: 1px;
+                    /* border-top: 5px solid blue; */
+                    background: blue;
+                    left: 98%;
+                    top: 98%;
+                }
+                100% {
+                    width: 1px;
+                    height: 1px;
+                    /* border-top: 5px solid blue; */
+                    background: blue;
+                    left: 98%;
+                    top: 98%;
+                }
+            }
+
+
+
+            @keyframes lineargrade {
+    0% {
+        background: -webkit-linear-gradient(left, transparent 0%,  rgba(255,255,255,1) 5%, rgba(255,255,255,1) 10%,transparent 100%);
+    background: -ms-linear-gradient(left, transparent 0%, rgba(255,255,255,1) 5%, rgba(255,255,255,1) 10%,transparent 100%);
+    background: -moz-linear-gradient(left, transparent 0%, rgba(255,255,255,1) 5%, rgba(255,255,255,1) 10%,transparent 100%);
+    background: linear-gradient(left, transparent 0%, rgba(255,255,255,1) 5%, rgba(255,255,255,1) 10%,transparent 100%);     
+        }
+     10% {
+        background: -webkit-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 10%, rgba(255,255,255,1) 15%,transparent 100%);
+    background: -ms-linear-gradient(left, transparent 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 15%,transparent 100%);
+    background: -moz-linear-gradient(left,transparent 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 15%,transparent 100%);
+    background: linear-gradient(left, transparent 0%,rgba(255,255,255,1) 10%, rgba(255,255,255,1) 15%,transparent 100%);     
+        }
+    20% { 
+        background: -webkit-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 15%, rgba(255,255,255,1) 20%,transparent 100%);
+    background: -ms-linear-gradient(left, transparent 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 20%,transparent 100%);
+    background: -moz-linear-gradient(left, transparent 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 20%,transparent 100%);
+    background: linear-gradient(left, transparent 0%,rgba(255,255,255,1) 15%, rgba(255,255,255,1) 20%,transparent 100%);     
+        }
+    30% { 
+        background: -webkit-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 20%, rgba(255,255,255,1) 25%,transparent 100%);
+    background: -ms-linear-gradient(left, transparent 0%,rgba(255,255,255,1) 20%, rgba(255,255,255,1) 25%,transparent 100%);
+    background: -moz-linear-gradient(left, transparent 0%,rgba(255,255,255,1) 20%, rgba(255,255,255,1) 25%,transparent 100%);
+    background: linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 20%, rgba(255,255,255,1) 25%,transparent 100%);     
+        }  
+    40% {
+        background: -webkit-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 25%, rgba(255,255,255,1) 30%,transparent 100%);
+    background: -ms-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 25%, rgba(255,255,255,1) 30%,transparent 100%);
+    background: -moz-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 25%, rgba(255,255,255,1) 30%,transparent 100%);
+    background: linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 25%, rgba(255,255,255,1) 30%,transparent 100%);     
+        }
+    50% {
+        background: -webkit-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 50%, rgba(255,255,255,1) 60%,transparent 100%);
+    background: -ms-linear-gradient(left, transparent 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 60%,transparent 100%);
+    background: -moz-linear-gradient(left,transparent 0%,  rgba(255,255,255,1) 50%, rgba(255,255,255,1) 60%,transparent 100%);
+    background: linear-gradient(left, transparent 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 60%,transparent 100%);     
+        }
+    60% {
+        background: -webkit-linear-gradient(left, transparent 0%,rgba(255,255,255,1) 60%, rgba(255,255,255,1) 70%,transparent 100%);
+    background: -ms-linear-gradient(left, transparent 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 70%,transparent 100%);
+    background: -moz-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 60%, rgba(255,255,255,1) 70%,transparent 100%);
+    background: linear-gradient(left, transparent 0%,rgba(255,255,255,1) 60%, rgba(255,255,255,1) 70%,transparent 100%);     
+        }
+    70% {
+        background: -webkit-linear-gradient(left, transparent 0%,rgba(255,255,255,1) 70%, rgba(255,255,255,1) 80%,transparent 100%);
+    background: -ms-linear-gradient(left, transparent 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 80%,transparent 100%);
+    background: -moz-linear-gradient(left,transparent 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 80%,transparent 100%);
+    background: linear-gradient(left,transparent 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 80%,transparent 100%);     
+        } 
+    80% {
+        background: -webkit-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 80%, rgba(255,255,255,1) 90%,transparent 100%);
+    background: -ms-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 80%, rgba(255,255,255,1) 90%,transparent 100%);
+    background: -moz-linear-gradient(left, transparent 0%, rgba(255,255,255,1) 80%, rgba(255,255,255,1) 90%,transparent 100%);
+    background: linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 80%, rgba(255,255,255,1) 90%,transparent 100%);     
+        } 
+    90% {
+        background: -webkit-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 90%, rgba(255,255,255,1) 95%,transparent 100%);
+    background: -ms-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 90%, rgba(255,255,255,1) 95%,transparent 100%);
+    background: -moz-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 90%, rgba(255,255,255,1) 95%,transparent 100%);
+    background: linear-gradient(left, transparent 0%,rgba(255,255,255,1) 90%, rgba(255,255,255,1) 95%,transparent 100%);     
+        } 
+    100% {
+        
+        background: -webkit-linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 95%, rgba(255,255,255,1) 99%,transparent 100%);
+    background: -ms-linear-gradient(left, transparent 0%,rgba(255,255,255,1) 95%, rgba(255,255,255,1) 99%,transparent 100%);
+    background: -moz-linear-gradient(left, transparent 0%,rgba(255,255,255,1) 95%, rgba(255,255,255,1) 99%,transparent 100%);
+    background: linear-gradient(left,  transparent 0%,rgba(255,255,255,1) 95%, rgba(255,255,255,1) 99%,transparent 100%);     
+        }
+            
+    }
+        </style>
+
+<style>
+    #numberxholder {               
+    color: transparent;
+    position: absolute;
+    /* background:black; */
+    padding: 0%;
+    width: 90px;
+    left: 45%;
+    top: 110px;
+    display:inline-block;
+    height: 21px;
+    font-size: 2em;
+    margin-bottom: 4%;
+   margin-top: 3px;
+   }
+    .numberx {               
+    color: transparent;
+    position: absolute;
+    /* background:black; */
+    padding: 0%;
+    top:0px;
+    left: 0px; 
+    margin:0%;
+    }
+
+    #number60 {visibility: hidden;color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 0.1s;}
+    #number59 {visibility: hidden;color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 1.1s;}
+    #number58 {visibility: hidden;color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 2.1s;}
+    #number57 {visibility: hidden;color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 3.1s;}
+    #number56 {visibility: hidden;color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 4.1s;}
+    #number55 {visibility: hidden;color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 5.1s;}
+    #number54 {visibility: hidden;color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 6.1s;}
+    #number53 {visibility: hidden;color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 7.1s;}
+    #number52 {visibility: hidden;color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 8.1s;}
+    #number51 {visibility: hidden;color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 9.1s;}
+
+    #number50 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 10.1s;}
+    #number49 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 11.1s;}
+    #number48 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 12.1s;}
+    #number47 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 13.1s;}
+    #number46 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 14.1s;}
+    #number45 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 15.1s;}
+    #number44 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 16.1s;}
+    #number43 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 17.1s;}
+    #number42 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 18.1s;}
+    #number41 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 19.1s;}
+
+    #number40 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 20.1s;}
+    #number39 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 21.1s;}
+    #number38 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 22.1s;}
+    #number37 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 23.1s;}
+    #number36 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 24.1s;}
+    #number35 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 25.1s;}
+    #number34 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 26.1s;}
+    #number33 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 27.1s;}
+    #number32 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 28.1s;}
+    #number31 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 29.1s;}
+
+
+    #number30 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 30.1s;}
+    #number29 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 31.1s;}
+    #number28 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 32.1s;}
+    #number27 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 33.1s;}
+    #number26 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 34.1s;}
+    #number25 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 35.1s;}
+    #number24 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 36.1s;}
+    #number23 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 37.1s;}
+    #number22 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 38.1s;}
+    #number21 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 39.1s;}
+ 
+    #number20 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 40.1s;}
+    #number19 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 41.1s;}
+    #number18 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 42.1s;}
+    #number17 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 43.1s;}
+    #number16 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 44.1s;}
+    #number15 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 45.1s;}
+    #number14 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 46.1s;}
+    #number13 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 47.1s;}
+    #number12 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 48.1s;}
+    #number11 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 49.1s;}
+  
+    
+    #number10 {visibility: hidden; color: rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 50.1s;}
+    #number9 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 51.1s;}
+    #number8 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 52.1s;}
+    #number7 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 53.1s;}
+    #number6 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 54.1s;}
+    #number5 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 55.1s;}
+    #number4 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 56.1s;}
+    #number3 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 57.1s;}
+    #number2 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 58.1s;}
+    #number1 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 59.1s;}
+    #number0 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 60.1s;}
+
+
+    
+
+
+
+    @keyframes ucolor {
+    0% {
+      
+        visibility: visible;
+        }
+    1% {
+      
+        visibility: visible;
+        }
+
+    99% {
+  
+        visibility: visible;
+        }
+    100% {
+   
+        visibility: visible;
+        }    
+    }
+    .numberx::before {
+
+        content: '';
+        display: inline-block;
+    }  
+    .numberx::after {
+        content: '';
+        display: inline-block;
+  
+      
+    } 
+
+
+
+
+
+.red {color: red}
+
+ 
+
+.options{ position: absolute;
+        
+        }
+/* #select1{position: absolute; bottom: 200px;left:50px}
+#select2{position: absolute; bottom: 200px;left:180px}
+#select3{position: absolute; bottom: 200px;left:310px}
+#select4{position: absolute; bottom: 200px;left:430px} */
+range {width: 400px}
+#select5{position: absolute; 
+z-index: 999;right: 2%;
+bottom: 75px;
+background: goldenrod;
+border:1px solid goldenrod;
+width: 96%;} 
+#select5::before{content:'NOT MY KINDA PERSON'; position: absolute;letter-spacing:3px;font-size: .6em; bottom: 10px; left:0%; color: white; }
+#select5::after{content:'MY KINDA PERSON'; position: absolute;letter-spacing:3px;font-size: .6em; bottom: 10px; right: 0%; color: white; }
+input[type=range]::-webkit-slider-runnable-track{background:green}
+input[type=range]::-webkit-slider-thumb{background:green; border-radius: 22px; border:10px solid goldenrod; width:50px; height:50px;background:goldenrod}
+input[type=range]::-ms-track{background:green}
+input[type=range]::-ms-fill-lower{background:green}
+input[type=range]::-ms-fill-upper{background:green}
+input[type=range]::-ms-thumb {background:green; border-radius: 22px; border:10px solid goldenrod; width:50px; height:50px;background:goldenrod}
+
+/* input[type=range]::-moz-s */
+</style>
+
+
+<style>
+        
+        .container {
+            max-width: 80%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 13px;
+            margin: 0% auto;
+        }
+        
+        ul.ks-cboxtags {
+            list-style: none;
+            /* padding: 20px; */
+        }
+        ul.ks-cboxtags li{
+          display: inline;
+        }
+        ul.ks-cboxtags li label{
+            display: inline-block;
+            background-color: transparent;
+            border: 2px solid rgba(139, 139, 139, .3);
+            color: #adadad;
+            border-radius: 25px;
+            white-space: nowrap;
+            margin: 3px 0px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            transition: all .2s;
+        }
+        
+        ul.ks-cboxtags li label {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        
+        ul.ks-cboxtags li label::before {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 12px;
+            padding: 2px 6px 2px 2px;
+            content: "\f067";
+            transition: transform .3s ease-in-out;
+        }
+        
+        ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+            content: "\f00c";
+            transform: rotate(-360deg);
+            transition: transform .3s ease-in-out;
+        }
+        
+        ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+            border: 2px solid rgba(11, 181, 8, 0.651);
+            background-color: rgba(11, 181, 8, 0.651);
+            color: #fff;
+            transition: all .2s;
+        }
+        
+        ul.ks-cboxtags li input[type="checkbox"] {
+          display: absolute;
+        }
+        ul.ks-cboxtags li input[type="checkbox"] {
+          position: absolute;
+          opacity: 0;
+        }
+        ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+          border: 2px solid #e9a1ff;
+        }
+
+#q1 , #q18 {            border: 2px solid rgba(229, 67, 13, 0.2675);
+            background-color: rgba(229, 67, 13, 0.275);}
+
+       .hachoices{background-color: yellow}   
+       
+#transitions {color: goldenrod; transition-property: color ; transition-duration: 2s; border:none;} 
+a:link  {color:white}
+a:visited > {color:white}   
+a:hover > {color:white}   
+a:active > {color:white}           
+</style>
+        <script>
+
+
+// var Mtest = window.open('');
+// Mtest.document.write("<html><head><title>Title</title></head><body>test</body></html>")
+function rollDice(){
+
+
+// session = document.baseURI;    
+
+
+die1 = document.getElementById('die1');
+die2 = document.getElementById('die2');
+var roll1 = document.getElementById('roll1');
+var roll2 = document.getElementById('roll2');
+q = document.getElementById('question');
+d1 = Math.floor(Math.random() * 6) + 1;
+d2 = Math.floor(Math.random() * 18) + 1;
+//var diceTotal= d1 + d2;
+ a ={ a : (d1 === 1) ? "H" 
+        : (d1 === 2) ? "Af" 
+        : (d1 === 3) ? "N" 
+        : (d1 === 4) ? "As" 
+        : (d1 === 5) ? "E" 
+        : (d1 === 6) ? "M" 
+        : 0
+        };
+ b ={
+        b : (d2 === 1) ? "U" 
+        : (d2 === 2) ? "M" 
+        : (d2 === 3) ? "N" 
+        : (d2 === 4) ? "G" 
+        : (d2 === 5) ? "L" 
+        : (d2 === 6) ? " " 
+        : (d2 === 7) ? " " 
+        : (d2 === 8) ? " " 
+        : (d2 === 9) ? " " 
+        : (d2 === 10) ? " " 
+        : (d2 === 11) ? " " 
+        : (d2 === 12) ? " " 
+        : (d2 === 13) ? " " 
+        : (d2 === 14) ? " " 
+        : (d2 === 15) ? " " 
+        : (d2 === 16) ? " " 
+        : (d2 === 17) ? " " 
+        : (d2 === 18) ? " " 
+        : (d2 === 1) ? " " 
+        : 0
+        }  ;    
+  
+// CUBE DIE #1  H	Hispanic	A	African		N	Native		A	Asian		E	European	B 	Blank
+// CUBE DIE #2  U	Underage	M	Multiplex	N	Non-Binary	G	Gay			L	Lesbian		B	Blind  
+        
+ c = function answer(x){
+    var a = x; 
+    var a = (a ==='H')?'Hispanic'
+    : (a ==='Af') ? 'African'
+    : (a ==='N') ? 'Native'
+    : (a ==='As') ? 'Asian'
+    : (a ==='E') ? 'European'
+    : (a ==='M') ? 'the masses'
+    : a === 0;
+    var b = x; 
+    var b = (b === 'U') ?'and underage'
+    : (b === 'M') ? 'and multi-racial'
+    : (b === 'N') ? 'and non-binary'
+    : (b === 'G') ? 'and gay'
+    : (b === 'L') ? 'and lesbian'
+    : (b === ' ' ) ? ' '
+    : 0;
+return [a,b]
+}
+
+// hack to remove f and s from Af and As respectively
+
+aa = (a.a ==='H')?'H'
+    : (a.a ==='Af') ? 'A'
+    : (a.a ==='N') ? 'N'
+    : (a.a ==='As') ? 'A'
+    : (a.a ==='E') ? 'E'
+    : (a.a ==='M') ? 'M'
+    :0 ;
+
+
+Hispanic = ['Hispanic','Hispanic-American','Mexican','Mexican-American','Puerto-Rican','LatinX']
+African = ['African','African-American','Black','West-Indian','Caribbean','Caribbean-American','Black-American']
+Asian = ['Asian','Asian-American','South-Asian','Chinese-American','Japanese-American','Korean-American','Philipino-American','Middle-Eastern-American']
+Native= ['Native','Native-American','Lenape','Montauk']
+European = ['European','European-American','White','White-American']
+Masses = ['being on the margins','working class','working poor','middle-class','essential workers']
+;
+ longer_name = (a.a ==='H')?Hispanic[Math.floor(Math.random() * Hispanic.length)]
+    : (a.a ==='Af') ? African[Math.floor(Math.random() * African.length)]
+    : (a.a ==='N') ? Native[Math.floor(Math.random() * Native.length)]
+    : (a.a ==='As') ? Asian[Math.floor(Math.random() * Asian.length)]
+    : (a.a ==='E') ? European[Math.floor(Math.random() * European.length)]
+    : (a.a ==='M') ? Masses[Math.floor(Math.random() * Masses.length)]
+    :  a.a;
+ 
+    // longer_name = (a ==='Hispanic')?Hispanic[Math.floor(Math.random() * Hispanic.length)]
+    // : (a ==='African') ? African[Math.floor(Math.random() * African.length)]
+    // : (a ==='Native') ? Native[Math.floor(Math.random() * Native.length)]
+    // : (a ==='Asian') ? Asian[Math.floor(Math.random() * Asian.length)]
+    // : (a ==='European') ? European[Math.floor(Math.random() * European.length)]
+    // :  a;
+
+
+  
+die1.innerHTML = aa;
+die2.innerHTML =b.b;  
+roll1.innerHTML = aa + ' as in '+c(a.a)[0];
+roll2.innerHTML = (b.b == ' ') ? ' ' 
+: b.b+ ' as in '+c(b.b)[1].slice(4);
+
+
+context = 'About a person who presents as ' + c(a.a)[0]+c(b.b)[1];
+w_ = ['when', 'where','what', 'why'];
+wtype = [Math.floor(Math.random() * 4)]
+
+
+
+
+
+// q_ = [
+// q1 = " Question 1 is about H...",
+// q2 =" Question 2 is about U...",
+// q3 =" Question 3 is about M...",
+// q4 =" Question 4 is about A...",
+// q5 =" Question 5 is about N...",
+// q6 =" Question 6 is about A...",
+// q7 =" Question 7 is about N...",
+// q8 =" Question 8 is about G...",
+// q9 =" Question 9 is about E...",
+// q10 =" Question 10 is about L...",
+// q11 =" Question 11 is about 0...",
+// q12 =" Question 12 is about 0..."
+// ];
+
+q1 = document.getElementsByClassName('hachoices');
+
+q2 = document.getElementsByTagName('li');
+
+z1 = document.querySelectorAll('input')
+
+
+
+
+
+    z1[0].setAttribute('value',q1[0].textContent);
+// z1[0].setAttribute('name',q1[0].textContent);
+    z1[1].setAttribute('value',q1[1].textContent);
+// z1[1].setAttribute('name',q1[1].textContent);
+    z1[2].setAttribute('value',q1[2].textContent);
+// z1[2].setAttribute('name',q1[2].textContent);
+    z1[3].setAttribute('value',q1[3].textContent);
+// z1[3].setAttribute('name',q1[3].textContent);
+    z1[4].setAttribute('value',q1[4].textContent);
+// z1[4].setAttribute('name',q1[4].textContent);
+    z1[5].setAttribute('value',q1[5].textContent);
+// z1[5].setAttribute('name',q1[5].textContent);
+    z1[6].setAttribute('value',q1[6].textContent);
+// z1[6].setAttribute('name',q1[6].textContent);
+    z1[7].setAttribute('value',q1[7].textContent);
+// z1[7].setAttribute('name',q1[7].textContent);
+    z1[8].setAttribute('value',q1[8].textContent);
+// z1[8].setAttribute('name',q1[8].textContent);
+    z1[8].setAttribute('value',q1[8].textContent);
+// z1[8].setAttribute('name',q1[8].textContent);
+    z1[9].setAttribute('value',q1[9].textContent);
+// z1[9].setAttribute('name',q1[9].textContent);
+    z1[10].setAttribute('value',q1[10].textContent);
+// z1[10].setAttribute('name',q1[10].textContent);
+    z1[11].setAttribute('value',q1[11].textContent)
+// z1[11].setAttribute('name',q1[11].textContent);
+    z1[12].setAttribute('value',q1[12].textContent);
+// z1[12].setAttribute('name',q1[12].textContent);
+    z1[13].setAttribute('value',q1[13].textContent);
+// z1[13].setAttribute('name',q1[13].textContent);
+    z1[14].setAttribute('value',q1[14].textContent);
+// z1[14].setAttribute('name',q1[14].textContent);
+    z1[15].setAttribute('value',q1[15].textContent);
+// z1[15].setAttribute('name',q1[15].textContent);
+    z1[16].setAttribute('value',q1[16].textContent);
+// z1[16].setAttribute('name',q1[16].textContent);
+z1[17].setAttribute('value',q1[17].textContent);
+// z1[17].setAttribute('name',q1[17].textContent);
+
+
+_oulda = [" could ", " should ", " would ", " wouldn\'t ", " shouldn\'t "]
+oulda = _oulda[Math.floor(Math.random() * 5)]
+
+
+// xyz.innerHTML = "<i>" +_oulda[0] +"</i>"
+// xyz = _coulda.innerHTML 
+
+_is = [" identifies as ", " is ", " is actively against people considered ",  " supports people considered "]
+that_is = _is[Math.floor(Math.random() * 4)]
+
+
+_it = ["goods", "stuff", "product(s)", "service(s)"]
+it = _it[Math.floor(Math.random() * 4)]
+
+thisperson = (c(b.b)[1] == ' ') ? longer_name+c(b.b)[1]
+: longer_name+" "+c(b.b)[1]
+
+_noun =[' person who', ' family who', ' household that']
+noun =_noun[Math.floor(Math.random() * 3)]
+
+// when w_[0]
+// where w_[1]
+//what w_[2]
+//why w_[3]
+
+value = [
+"Tell " +w_[0] + " a"+noun+that_is+thisperson + oulda + " want your " + it+".",    
+"To a "+noun+that_is+thisperson+ " tell what distinguishes your "+ it+" from others.",
+"Tell "+w_[wtype]+" a"+noun+that_is+thisperson + " could benefit from using your " + it+".",
+"Tell " +w_[0]+" a"+noun+that_is+thisperson + oulda + " want your " + it+".",
+// oulda[1].toLocaleUpperCase()+oulda.slice(2)+" you do business with a"+noun+that_is+thisperson +  "?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" use your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" use your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your "+it+ oulda+" a"+noun+that_is+thisperson+" like?",
+w_[0][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a"+noun+that_is+thisperson+"  use your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" need your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your "+it+ oulda+" a"+noun+that_is+thisperson+" find useful?",
+"Would you consider a"+noun+that_is+thisperson+" as an ideal client? Why?"
+
+]
+;
+revenue = [
+w_[wtype][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" buy your "+it+"?",
+w_[wtype][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" buy your "+it+"?",
+w_[wtype][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a"+noun+that_is+thisperson+" buy your "+it+"?"
+]
+;
+digest = [
+"What reviews would a"+noun+that_is+thisperson+" give about your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" like your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" like your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your "+it+ oulda+" be liked by a"+noun+that_is+thisperson+"?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" not like to use your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" not like to use your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your "+it+ oulda+" a"+noun+that_is+thisperson+" not like?",
+w_[0][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a"+noun+that_is+thisperson+" not like to use your "+it+"?",
+"How frequently "+oulda+" a"+noun+that_is+thisperson+" use your "+it+"?"
+]
+;
+
+discover = [
+"Tell " +w_[0]+noun+that_is+thisperson + oulda + " want your " + it+".",    
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a curious"+noun+that_is+thisperson+" find your "+it+"?",
+w_[1][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a curious"+noun+that_is+thisperson+" find your "+it+"?",
+w_[2][0].toLocaleUpperCase()+w_[2].slice(1)+oulda+" a curious"+noun+that_is+thisperson+" find interesting about your "+it+"?",
+w_[3][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a curious"+noun+that_is+thisperson+" find your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" an inspired"+noun+that_is+thisperson+" share your "+it+"?",
+w_[1][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" an inspired"+noun+that_is+thisperson+" share your "+it+"?",
+"An inspired"+noun+that_is+thisperson+oulda+"share "+w_[2]+" about your "+it+"?",
+w_[3][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" an inspired"+noun+that_is+thisperson+" review your "+it +"?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" recommend your "+it+"?",
+w_[1][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" recommend your "+it+"?",
+w_[2][0].toLocaleUpperCase()+w_[2].slice(1)+" about your "+it +oulda+" a "+noun+that_is+thisperson+" recommend?",
+w_[3][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+noun+that_is+thisperson+" recommend your "+it+"?"
+]
+
+purpose = [
+"Tell " +w_[0]+" a person who identifies as "+thisperson + oulda + " use your " + it+".",
+"Tell " +w_[1]+" a person who identifies as "+thisperson + oulda + " use your " + it+".",
+"Tell " +w_[2]+" use your " + it +   oulda + "be to a person who identifies as "+thisperson +".",
+"Tell " +w_[2]+" a person who identifies as "+thisperson + oulda + " do with your " + it+".",
+"Tell " +w_[3]+" a person who identifies as "+thisperson+ _oulda[2] + " dislike your " + it+".",
+"Tell " +w_[3]+" a person who identifies as "+thisperson + _oulda[2] + " like your " + it+".",
+"Tell " +w_[3]+" a person who identifies as "+thisperson + oulda + " use your " + it+".",
+"Did you have in mind"+" a"+noun+that_is+thisperson+" when you created your "+it+"?",
+"Would you consider a"+noun+that_is+thisperson+" as an ideal client? Why?",
+"Would a"+noun+that_is+thisperson+" use your "+it+" differently than other people? How?",
+"Would a"+noun+that_is+thisperson+" access your "+it+" differently than other people? How?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" experience your "+it+" differently than you intended?",
+w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" experience your "+it+" differently than you intended?",
+w_[0][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a"+noun+that_is+thisperson+" experience your "+it+" differently than you intended?"
+]
+
+
+// questions = (a.a === 'H') ? q_[Math.floor(Math.random() * 11) + 1]
+// : (a.a === 'U') ? q2 
+// : (a.a === 'M') ? q3
+// : (a.a === 'A') ? q4
+// : (a.a === 'N') ? q5
+// : (b.b === 'A') ? q6
+// : (b.b === 'N') ? q7
+// : (b.b === 'G') ? q8 
+// : (b.b === 'E') ? q9
+// : (b.b === 'L') ? q10
+// : (b.b === '0') ? q11 
+// : (a.a === '0') ? q12 
+// : 0;
+// q_[Math.floor(Math.random() * 11) + 1]
+
+qtypes = [
+qpurpose = purpose[Math.floor(Math.random() * 14)]
+,
+qdigest = digest[Math.floor(Math.random() * 9) ]
+,
+qdiscover = discover[Math.floor(Math.random() * 13)]
+,
+qrevenue = revenue[Math.floor(Math.random() * 3)]
+,
+qvalue = value[Math.floor(Math.random() * 11)]
+]
+
+qtypeNumber = [Math.floor(Math.random() * qtypes.length)]
+const questions = qtypes[qtypeNumber];
+
+q.textContent =  questions;//questions;
+
+z1[19].setAttribute('value',questions);
+// a0= document.getElementById('thequestion');
+// a0.setAttribute('name', 'Query');
+// a0.setAttribute('value', questions);
+// a0.textContent = questions;
+
+
+q1[0].textContent = (wtype == 0) ? 'not a relevant question'
+    : (wtype == 1) ? 'not a relevant question'
+    : (wtype == 2) ? 'not a relevant question'
+    : (wtype == 3) ? 'not a relevant question'
+    : 0;
+
+q1[1].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Mornings'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'everywhere'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'My ideal client'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;    
+
+q1[2].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'Mid-day'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'nationally'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'limted supply'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[3].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Afternoons'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? '[city location]'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'High Demand'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My dideal client'
+: 0;
+
+q1[4].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Evenings'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in a crowd'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'my product was made for them'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[5].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Nights'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in a car'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'They are VIP'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[6].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Daily' 
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'at home' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'It benefits them'    
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[7].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'Weekly'    
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'at work'   
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ?  'they earn money'   
+
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[8].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Monthly'   
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'at school' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ?  'they feel good'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My dideal client'
+: 0;
+
+q1[9].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'throughout the day'   
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in public' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'our interests align'  
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[10].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'throughout the night' 
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in private' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'our values align'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My dideal client'
+: 0;
+
+q1[11].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Weekdays'    
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in a bedroom'  
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'I really market to them'   
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My dideal client'
+: 0;
+
+q1[12].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'Weeknights'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in a bathroom' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'they know us'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[13].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'Weekends'   
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')?  'in a kitchen'  
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'we know them' 
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My dideal client'
+: 0;
+
+q1[14].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'during lunch' 
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in an office'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ?  'we have trust'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[15].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'during dinner' 
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')?  'in a store' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'affordable' 
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[16].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'during breakfast' 
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in transit' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'gGood Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'exclusive'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[17].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'let me explain...'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'let me explain...'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'let me explain...'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'let me explain...'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'let me explain...'
+: 0;
+
+
+
+
+// NEED TO FIX FROM HERE
+game = document.location.search.split('+')
+game = game.join(' ')
+
+
+ aha = (game == ''|| game =="?written=") ? questions : game ;
+
+
+
+answer = 
+{'z0' : (z1[0].checked) ? z1[0].value : ''
+,
+'z1' : (z1[1].checked) ? z1[1].value : ''
+,
+'z2' : (z1[2].checked) ? z1[2].value : ''
+,
+'z3' : (z1[3].checked) ? z1[3].value : ''
+,
+'z4' : (z1[4].checked) ? z1[4].value : ''
+,
+'z5' : (z1[5].checked) ? z1[5].value : ''
+,
+'z6' : (z1[6].checked) ? z1[6].value : ''
+,
+'z7' : (z1[7].checked) ? z1[7].value : ''
+,
+'z8' : (z1[8].checked) ? z1[8].value : ''
+,
+'z9' : (z1[9].checked) ? z1[9].value : ''
+,
+'z10' : (z1[10].checked) ? z1[10].value : ''
+,
+'z11' : (z1[11].checked) ? z1[11].value : ''
+,
+'z12' : (z1[12].checked) ? z1[12].value : ''
+,
+'z13' : (z1[13].checked) ? z1[13].value : ''
+,
+'z14' : (z1[14].checked) ? z1[14].value : ''
+,
+'z15' : (z1[15].checked) ? z1[15].value : ''
+,
+'z16' : (z1[16].checked) ? z1[16].value : ''
+,
+'z17' : (z1[17].checked) ? z1[17].value : ''
+// ,
+// 'z18' : (z1[18].checked) ? z1[18].value : ''
+}
+
+session = { aha , answer}
+storeGame(session);
+return session;
+}
+// end of above function
+
+function storeGame(s){
+const y= s;
+x = document.lastModified;
+const xy ={'a_timestamp: ':x, 'b_question: ':y.aha, 'c_answers: ':y.answer};
+ttt = [];
+ttt.push(xy); 
+qb4 = ttt[0]["b_question: "]
+qnow =z1[19].value
+
+
+d = document.location.search.concat('?'+document.location.pathname+qnow)
+// _a0 = (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game.html') ? qnow : _a0
+// _b1 = (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game1.html') ? qnow : _b1
+// _c2 = (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game2.html') ? qnow : _c2
+
+_a0 = (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game.html') ? qnow 
+        : (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game1.html') ? qnow 
+        : (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game2.html') ? qnow 
+        : qb4
+
+const an = ttt[0]["b_question: "]
+// const xc = ttt[0]["b_question: "]
+// const fin = $1;
+// ttt.unshift(fin); 
+z1 = document.querySelectorAll('input')  
+,   
+(z1[0].checked) ? z1[0].checked = false : z1[0].checked = false
+,
+(z1[1].checked) ? z1[1].checked = false : z1[1].checked = false
+,
+(z1[2].checked) ? z1[2].checked = false : z1[2].checked = false
+,
+(z1[3].checked) ? z1[3].checked = false : z1[3].checked = false
+,
+(z1[4].checked) ? z1[4].checked = false : z1[4].checked = false
+,
+(z1[5].checked) ? z1[5].checked = false : z1[5].checked = false
+,
+(z1[6].checked) ? z1[6].checked = false : z1[6].checked = false
+,
+(z1[7].checked) ? z1[7].checked = false : z1[7].checked = false
+,
+(z1[8].checked) ? z1[8].checked = false : z1[8].checked = false
+,
+(z1[9].checked) ? z1[9].checked = false : z1[9].checked = false
+,
+(z1[10].checked) ? z1[10].checked = false : z1[10].checked = false
+,
+(z1[11].checked) ? z1[11].checked = false : z1[11].checked = false
+,
+(z1[12].checked) ? z1[12].checked = false : z1[12].checked = false
+,
+(z1[13].checked) ? z1[13].checked = false : z1[13].checked = false
+,
+(z1[14].checked) ? z1[14].checked = false : z1[14].checked = false
+,
+(z1[15].checked) ? z1[15].checked = false : z1[15].checked = false
+,
+(z1[16].checked) ? z1[16].checked = false : z1[16].checked = false
+,
+(z1[17].checked) ? z1[17].checked = false : z1[17].checked = false
+,
+(z1[18].checked) ? z1[18].checked = false : z1[18].checked = false
+
+
+return ttt;
+}
+
+
+
+
+//new function
+// function hold(session){
+// const game= session;
+// all = [];
+// // all.push(game);
+// all.unshift(game);
+// // all[0].
+// all.push(document.location.search);
+// all.push(storeGame());
+// all.push(game);
+
+// return all; 
+// }
+//end of function
+
+
+
+
+// function uncheck(){
+
+// return 
+
+// }
+// NEED TO FIX TO HERE
+
+// Math.floor(Math.random() * 4) + 1
+
+
+/*
+GAME MECHANICS
+
+//HUMAN ANGLE BY HUMAN ANGEL INC. est 2018 Human Angle: Considerations before the code.
+## CONCEPT AND RULES: This is a game played with both dice and cards. 
+//First you roll the dice. Then you answer card questions.
+
+H	Hispanic		A	Asian
+U	Underage		N	Non-Binary
+M	Multiplex		G	Gay
+A	African			L	Lesbian
+N	Native			E	European
+B	Blind			B	Blank
+
+CUBE DIE #1  H	Hispanic	A	African		N	Native		A	Asian		E	European	B 	Blank
+CUBE DIE #2  U	Underage	M	Multiplex	N	Non-Binary	G	Gay			L	Lesbian		B	Blind
+
+DICE REPRESENTATIONS> BY PLACE + BY ETHNICITY
+H:Hispanic: Latin Diaspora		A:African: African Diaspora		N:Native: Native Peoples
+A: Asian : Asian Diaspora		E:European: European Diaspora
+
+DICE REPRESENTATIONS> BY IDENTITY + BY CULTURE
+N: Non-Binary: Transgender	G: Gay: Alt Male	L: Lesbian: ALt Female
+
+DICE REPRESENTATIONS> BY GAME INCLUSION
+U: Underage	Appropriateness 	M: Multiplex Language Translations
+B: Blind Vision Impaired		B: Blank Open
+
+# GAMEPLAY
+# PLAYERS DONT COMPETE AGAINST ANOTHER. THEY COMPETE WITH ONE ANOTHER. SAME TEAM.
+# RATHER THAN NUMBERS ON DICE, GAME USES LETTERS
+# RATHER THAN HAVE SUITES ON CARDS, GAME USES QUESTION-TYPE AND QUESTION ON CARD
+# GAME REQUIRES RECORDING DEVICE TO COLLECT ANSWERS TO QUESTION PROMPTS
+# ONLINE VERSION CAN CONNECT TO LIVEPAD AND SHARE VIA EMAIL, ETC...
+# A DEALER DEALS AN ARRAY OF PRESHUFFLED CARDS FROM (DECK OF 52 QUESTIONS)
+# 1 PLAYER = 52 CARDS 2 PLAYERS= 26 CARDS 3 PLAYERS= 17 CARDS 4 PLAYERS= 13 CARDS 
+# 5 PLAYERS+ NUMBER OF PLAYERS DIVIDE 52 CARDS WITH REMAINDER IN POT AS BONUS POINTS
+# IDENTIFY CHOICE TARGETS >> SELECT DEMOGRAPHICS (MULTI - SELECT)
+# RANK CHOICES SO THAT A HEIRARCHY IS FORMED
+# DICE ROLL > SEE 2 LETTERS
+# DICE WITH ABOVE LETTERS ON EACH FACE REPRESENTING PEOPLE FROM VARIOUS CATEGORIES
+# ANSWER ROUNDS OF QUESTIONS FOR EACH DEMOGRAPHIC (52 CARD QUESTIONS)
+# ROLL AND RECORD 2 LETTERS FACE UP
+# BASED ON LETTERS ROLLED ANSWER QUESTIONS AS RELATED TO THAT AUDIENCE GROUP
+# ANSWER QUESTIONS IN A TRIPARTITE MANNER
+# THINK IN TERMS OF MARKET RESEARCH AND CLIENT KNOWLEDGE
+# THINK IN TERMS OF ADDRESSING CONTENT
+# THINK IN TERMS OF ADDRESSING ACCESS AND ACCESSIBILITY
+# TO EACH QUESTION TELL WHAT YOU KNOW ABOUT THAT PERSON IN GENERAL
+AND WHAT YOUR CULTURAL LANGUAGE WILL BE TO THAT PERSON IN GENRAL 
+AND WHAT DEVICES AND SOFTWARE CONSIDERATIONS THAT PERSON REQUIRES IN GENERAL. HOWEVER, SPECIFICITY WINS THE GAME!
+
+## QUESTION CARDS (x52) QUESTION CATEGORIES (x4) SUBCATEGORY QUESTIONS (x13)
+## CATEGORIES: WHY || HOW || WHEN || WHERE	
+## SUB CATEGORIES:	DIGEST 3 || DISCOVER 3 || PURPOSE 4 || REVENUE 1 || VALUE 2
+## ? [WHY] [HOW] [WHEN] [WHERE] DOES THIS [DICE ROLLED] PERSON ...
+## SUBCATEGORY QUESTIONS X13
+## DISCOVER?#FIND YOUR PRODUCT/SERVICE?
+## DISCOVER?#SHARE YOUR PRODUCT/SERVICE?
+## PUPOSE RED	?#USE OR ENGAGE WITH YOUR PRODUCT/SERVICE IN PERSON?
+## PUPOSE RED	?#USE OR ENGAGE WITH YOUR PRODUCT/SERVICE WITH OTHER PEOPLE?
+## PUPOSE RED	?#USE OR ENGAGE WITH YOUR PRODUCT/SERVICE ONLINE?
+## PUPOSE RED	?#USE OR ENGAGE WITH YOUR PRODUCT/SERVICE ONLINE WITH OTHER PEOPLE?
+## REVENUE GRN	?#PAY FOR YOUR PRODUCT/SERVICE?
+## DIGEST YLLW	?#IN TERMS OF FREQUENCY USE YOUR PRODUCT/SERVICE?
+## VALUE BLUE	?#BENEFIT FROM USING YOUR PRODUCT/SERVICE?
+## DISCOVER?#SEE YOUR PRODUCT/SERVICE?
+## VALUE BLUE 	?#DISTINGUISH YOUR PRODUCT/SERVICE FROM OTHERS?
+## DIGEST YLLW	?#LIKE YOUR PRODUCT/SERVICE?
+## DIGEST YLLW	?#DISLIKE YOUR PRODUCT/SERVICE?
+
+### WINNING
+### FIRST PLAYER TO ANSWER ALL CARD QUESTIONS IN POSSESSION 'WINS'...
+### PLAYERS THAT ANSWER ALL QUESTIONS OF A CERTAIN CATEGORY 'WIN'...{ALL WHY QUESTIONS}
+### PLAYER THAT ANSWERS A NUMBER OF QUESTIONS WITHIN A TIME-PERIOD 'WINS'...(2 MIN GAME)
+### 1 PLAYER = ANSWER ALL CARD QUESTIONS 'WIN'...
+### 2 PLAYERS+ = FIRST PLAYER TO ANSWER ALL CARD QUESTIONS + EXTRA CARD QUESTIONS 'WIN'...
+
+*/
+        </script>
+    </head>
+    <body onload="rollDice()">
+        <hr/>
+        <h1><a href="file:///Users/davidkene/Desktop/dice%20game/dice-game.html"> H.U.M.A.N. A.N.G.L.E.S.</a><br/> <span class="credits">the Q&A game by Human Angel Tech | Los Human Angeles </span></h1>
+        
+       <p class="instructions" onclick="toggle_visibility('instructions'), align_right('instructions');"> how to play<!-- <img src="READMORE.svg" style="width: 15%;opacity:.6">   -->
+            <span id="instructions" style="display: none">
+               <a href="#"> istructions </a>
+                <br/>
+                <a href="#credits">  credits </a>
+            </span>
+        </p>
+        <h2 id="timer"> TIMER 
+            <span  id="numberxholder" >
+
+
+                <span id="number60" class="numberx">1:00 </span>
+                <span id="number59" class="numberx">:59 </span>
+                <span id="number58" class="numberx">:58 </span>
+                <span id="number57"class="numberx">:57 </span>
+                <span id="number56"class="numberx">:56 </span>
+                <span id="number55" class="numberx">:55 </span>
+                <span id="number54" class="numberx">:54 </span>
+                <span id="number53" class="numberx">:53 </span>
+                <span id="number52" class="numberx">:52 </span>
+                <span id="number51" class="numberx">:51 </span>
+
+
+                <span id="number50" class="numberx">:50 </span>
+                <span id="number49" class="numberx">:49 </span>
+                <span id="number48" class="numberx">:48 </span>
+                <span id="number47"class="numberx">:47 </span>
+                <span id="number46"class="numberx">:46 </span>
+                <span id="number45" class="numberx">:45 </span>
+                <span id="number44" class="numberx">:44 </span>
+                <span id="number43" class="numberx">:43 </span>
+                <span id="number42" class="numberx">:42 </span>
+                <span id="number41" class="numberx">:41 </span>
+                <span id="number40" class="numberx">:40 </span>
+
+
+                <span id="number39" class="numberx">:39 </span>
+                <span id="number38" class="numberx">:38 </span>
+                <span id="number37"class="numberx">:37 </span>
+                <span id="number36"class="numberx">:36 </span>
+                <span id="number35" class="numberx">:35 </span>
+                <span id="number34" class="numberx">:34 </span>
+                <span id="number33" class="numberx">:33 </span>
+                <span id="number32" class="numberx">:32 </span>
+                <span id="number31" class="numberx">:31 </span>
+
+
+                <span id="number30" class="numberx">:30 </span>
+                <span id="number29" class="numberx">:29 </span>
+                <span id="number28" class="numberx">:28 </span>
+                <span id="number27"class="numberx">:27 </span>
+                <span id="number26"class="numberx">:26 </span>
+                <span id="number25" class="numberx">:25 </span>
+                <span id="number24" class="numberx">:24 </span>
+                <span id="number23" class="numberx">:23 </span>
+                <span id="number22" class="numberx">:22 </span>
+                <span id="number21" class="numberx">:21 </span>
+
+
+                <span id="number20" class="numberx">:20 </span>
+                <span id="number19" class="numberx">:19 </span>
+                <span id="number18" class="numberx">:18 </span>
+                <span id="number17"class="numberx">:17 </span>
+                <span id="number16"class="numberx">:16 </span>
+                <span id="number15" class="numberx">:15 </span>
+                <span id="number14" class="numberx">:14 </span>
+                <span id="number13" class="numberx">:13 </span>
+                <span id="number12" class="numberx">:12 </span>
+                <span id="number11" class="numberx">:11 </span>
+
+                <span id="number10" class="numberx">:10 </span>
+                <span id="number9" class="numberx">:09 </span>
+                <span id="number8" class="numberx">:08 </span>
+                <span id="number7"class="numberx">:07 </span>
+                <span id="number6"class="numberx">:06 </span>
+                <span id="number5" class="numberx">:05 </span>
+                <span id="number4" class="numberx">:04 </span>
+                <span id="number3" class="numberx">:03 </span>
+                <span id="number2" class="numberx">:02 </span>
+                <span id="number1" class="numberx">:01 </span>
+                <span id="number0" class="numberx">:00 </span>
+            </span> 
+  
+        </h2>
+        <h3 id="points"> POINTS: <span id="points" style="text-align: right;"></span></h3>
+        <h3 id="timertoggle"> <span id="buttn1" onclick="pause('buttn1'),startTimer()">TIMER IS ON</span></h3>
+        <div class="dicearea">
+            
+           <div class="diewrap">
+               <span id="color1" class="colorwrap"></span>
+               <span class="colorwrap2"></span>
+               <span class="colorwrap3"></span>
+               <span class="colorwrap4"></span>
+               <span class="colorwrap5"></span>
+               <span class="colorwrap6"></span>
+               <span class="colorwrap7"></span>
+               <div id="die1" class="dice">0</div>
+               <span id="roll1" class="explain"></span> 
+            </div>   
+           <div class="diewrap">
+               <span id="color2" class="colorwrap11"></span>
+               <span class="colorwrap12"></span>
+               <span class="colorwrap13"></span>
+               <span class="colorwrap14"></span>
+               <span class="colorwrap15"></span>
+               <span class="colorwrap16"></span>
+               <span class="colorwrap17"></span>
+               <div id="die2" class="dice">0</div>
+               <span id="roll2" class="explain"></span>
+            </div>    
+           
+ 
+        </div>
+        <h2 id="status" style="clear:left"></h2>
+        <div class="space"> </div>
+        <hr/>
+        <form name="qanda"id="records" action="dice-game1.html" method="GET" > 
+            <fieldset>
+                <label id="question" class="question" onsubmit="rollDice(), storeGame()"> Press Play to Start this Game</label>
+               
+                <br/>
+        
+        <div class="container">
+            <ul class="ks-cboxtags" name="choicea">
+                <li><input  name ="irrelevant" type="checkbox" id="checkboxOne" ><label id="q1" class="hachoices" for="checkboxOne"></label></li> <!--checked-->
+                <li><input  name ="answer2" type="checkbox" id="checkboxTwo"  ><label id="q2" class="hachoices" for="checkboxTwo"></label></li>
+                <li><input  name ="answer3" type="checkbox" id="checkboxThree" ><label id="q3" class="hachoices" for="checkboxThree"></label></li>
+                <li><input  name ="answer4" type="checkbox" id="checkboxFour" ><label id="q4" class="hachoices" for="checkboxFour"></label></li>
+                <li><input  name ="answer5" type="checkbox" id="checkboxFive"><label id="q5" class="hachoices" for="checkboxFive"></label></li>
+                <li><input  name ="answer6" type="checkbox" id="checkboxSix"   ><label id="q6"  class="hachoices" for="checkboxSix"></label></li>
+            </ul>
+            <ul class="ks-cboxtags" name="choiceb">    
+                <li><input  name ="answer7" type="checkbox" id="checkboxSeven" value="Rainbow Dash"><label id="q7" class="hachoices" for="checkboxSeven"></label></li> <!--checked-->
+                <li><input  name ="answer8" type="checkbox" id="checkboxEight"  ><label id="q8" class="hachoices" for="checkboxEight"></label></li>
+                <li><input  name ="answer9" type="checkbox" id="checkboxNine" ><label id="q9" class="hachoices" for="checkboxNine"></label></li>
+                <li><input  name ="answer10" type="checkbox" id="checkboxTen" ><label id="q10" class="hachoices" for="checkboxTen"></label></li>
+                <li><input  name ="answer11" type="checkbox" id="checkboxEleven"><label id="q11" class="hachoices" for="checkboxEleven"></label></li>
+                <li><input  name ="answer12" type="checkbox" id="checkboxTwelve"   ><label id="q12" class="hachoices" for="checkboxTwelve"></label></li>
+            </ul>
+            <ul class="ks-cboxtags" name="choicec"> 
+                <li><input name ="answer13" type="checkbox" id="checkboxThirteen" value="Rainbow Dash"><label id="q13" class="hachoices" for="checkboxThirteen"></label></li> <!--checked-->
+                <li><input name ="answer14" type="checkbox" id="checkboxFourteen"  ><label id="q14" class="hachoices" for="checkboxFourteen"></label></li>
+                <li><input name ="answer15" type="checkbox" id="checkboxFifteen" ><label id="q15"  class="hachoices" for="checkboxFifteen"></label></li>
+                <li><input name ="answer16" type="checkbox" id="checkboxSixteen" ><label id="q16"  class="hachoices" for="checkboxSixteen"></label></li>
+                <li><input name ="answer17" type="checkbox" id="checkboxSeventeen"><label id="q17"  class="hachoices" for="checkboxSeventeen"></label></li>
+                <li><input name ="answer18" type="checkbox" id="checkboxEighteen" ><label id="q18"  class="hachoices" for="checkboxEighteen"></label></li>               
+            </ul>
+          <!--name="written"--> 
+          </div>     
+                 <input type="text" title="" size="20" value="" id="q-answer" class="q-answer"/>
+                <!-- <hr/> -->
+                <br/>
+             
+            </fieldset>
+            <!-- <input  name="choicee" type="submit" for="qanda" value ="NEXT" id="buttn1"  class="roll "/> -->
+              <button  onsubmit="rollDice()" class="roll ">NEXT</button>
+        <input  name ="END_ANSWERS_FOR_QUESTION1__START_QUESTION1__" id="thequestion" type="hidden" />
+        </form>
+        <!-- <input name="choicee" type="submit" for="qanda" value ="NEXT" id="buttn1" onclick="rollDice()" class="roll "/> -->
+        <!-- onclick="rollDice() , startTimer()"  -->
+        <div class="container-roll">     
+        <div class="rollbackground"> </div> 
+        
+        <button id="buttn1" onclick="  rollDice() , startTimer()" class="second-roll"><!--<a id="transitions" href="#transitions">--> PLAY<!--</a>--></button>
+    </div> 
+<script>
+
+function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'none')
+          e.style.display = 'block';
+       else
+          e.style.display = 'none';
+    }
+function align_right(id) {
+       var e = document.getElementById(id);
+       if(e.style.color == 'red')
+          e.style.color = 'blue';
+       else
+          e.style.color = 'red';
+          e.style.content
+    }
+
+    countdown = setInterval(startTimer,1000);  
+
+    function startTimer() {
+        var e = document.querySelector('h2','span');
+        if(e.style.display == 'none')
+          e.style.display = 'inline-block';
+          
+       else if(e.style.display == 'inline-block')
+          e.style.display = 'none';
+          
+        
+    }  
+
+    // if (document.querySelector('h2 span').innerText ==':50 ')
+    // {rollDice() }
+    
+
+// clearInterval(countdown);
+// startTimer('h2','span');
+
+    function pause(id) {
+       var e = document.getElementById(id);
+     
+       if(e.innerHTML == 'TIMER IS OFF')
+         
+       e.innerHTML = 'TIMER IS ON';
+      else
+      e.innerHTML = 'TIMER IS OFF';
+
+    }    
+    
+</script>
+    </body>
+</html>
+
+
+<!--
+
+    WHERE: 
+    AT HOME BATH BEDROOM LIVINGROOM DEN DINING-ROOM KITCHEN FRONTYARD BACKYARD ROOF BASEMENT
+    AT WORK OFFICE-AREA COMMON-AREA DINING-AREA 
+    AT SCHOOL 
+    AT HOUSE
+    AT APT
+    IN THE WORLD ANY COUNTRY
+
+    WHEN:
+    DAILY WEEKLY MONTHLY 24/7 HOURLY THROUGHOUT THE DAY CONSTANTLY [RANDOM TIME OF DAY AM] [RANDOM TIME OF DAY PM]
+
+
+    WHY:
+    IT WAS MADE FOR THEM
+    THEY LEARN
+    THEY EAT BETTER 
+    THEY GET SMARTER
+    THEY GET HEALTHIER
+    THEY GET STRONGER
+    THEY BECOME MORE SAVVY
+    THEY CLEAN BETTER
+    THEY WORK BETTER
+    THEY PLAY BETTER
+    THEY GAIN EFFICIENCY
+
+
+    WHAT:
+    BEAUTY
+    FINANCE
+    EDUCATION
+    SOCIAL
+    MOBILE 
+
+    DISLIKE: THE WAY IT WORKS.
+    
+
+-->

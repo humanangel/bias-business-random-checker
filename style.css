@@ -1,0 +1,1050 @@
+#body2 { z-index: 999999;width:100%; height: 90%; background: rgba(0,0,0.1); display:block; position: absolute;top:10%;left: 0px }
+
+
+
+
+#hl_questions {
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  z-index:99;
+  /* transform: scale(0.95); */
+  visibility: hidden;
+  animation: uask 12s ease-in-out;
+  animation-iteration-count:1;
+  /* animation-delay: 20s; */
+  animation-delay: 0s;
+}   
+
+
+
+#hl_dice {
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    z-index:99;
+    transform: scale(0.95);
+    visibility: hidden;
+    animation: uask 10s ease-in-out;
+    animation-iteration-count:1;
+    /* animation-delay: 10s; */
+    animation-delay: 0s;
+}
+
+
+#hl_answers{
+    background-color: transparent;
+    font-size:12px; 
+    padding: 3%;
+    animation: uask 15s ease-in-out;
+    animation-iteration-count:1;
+    /* animation-delay: 70s; */
+    animation-delay: 0s;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    z-index:99;   
+}   
+
+#hl_points {
+    padding: 2%;
+    visibility: hidden;
+    animation: uask 5s ease-in-out;
+    animation-iteration-count:1;
+    /* animation-delay: 5s; */
+    animation-delay: 0s;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    z-index:99;
+ }
+
+#highlightq5{
+    padding: 3%;
+    animation: uask 15s ease-in-out;
+    animation-iteration-count:1;
+    animation-delay: 70s;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    z-index:99;
+
+}  
+
+
+#hl_inputs{
+    padding: 3%;
+    animation: uask 15s ease-in-out;
+    animation-iteration-count:1;
+    /* animation-delay: 70s; */
+    animation-delay: 0s;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    z-index:99;  
+}
+
+
+#hl_timer{
+    padding: 3%;
+    animation: uask 15s ease-in-out;
+    animation-iteration-count:1;
+    /* animation-delay: 70s; */
+    animation-delay: 0s;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    z-index:99;  
+}
+
+#hl_help{
+    padding: 3%;
+    animation: uask 15s ease-in-out;
+    animation-iteration-count:1;
+    /* animation-delay: 70s; */
+    animation-delay: 0s;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    z-index:99;  
+}
+
+#hl_controls{
+    padding: 3%;
+    animation: uask 15s ease-in-out;
+    animation-iteration-count:1;
+    /* animation-delay: 70s; */
+    animation-delay: 0s;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    z-index:99;  
+}
+
+
+
+
+@media only screen and (max-width:727px) {
+    * {margin: 0px; padding: 0px}
+    html{margin: 0px; padding: 0px}
+    body{
+            margin: 0px; padding: 0px;  border: none; color: rgba(255, 220, 100,.9);background: rgba(10, 55, 77, 1);
+            background-image: url('bacground2.png');
+            background-size: cover; 
+        }
+    
+    .q-answer {
+            width:96%;
+            font-size: 1em;
+            padding: 1%;
+            margin: 5% 0% 2%;
+            font-family:'philosopher';
+            display: none;
+            height: 0px;
+            background: transparent;
+            border:none;
+        }
+
+    .diewrap {
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            position:relative;
+            width: 44%;
+            height:185px;
+            display: block;
+            float: left;
+            margin: 0% 1%;
+            overflow: hidden;
+            border-radius: 10px;
+            transform: scale(.9);
+            background:rgba(0,0,0,.36);
+        }
+    
+    .roll {
+            width: 25%;
+            /* margin:1% 0%; */
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            font-size: 3rem;
+            border: none;
+            font-family:'LuckiestGuy';
+            text-transform: uppercase;
+           background: transparent;
+           background: rgba(11, 181, 8, 0.351);
+           padding-top:1%;
+            color: white;
+            letter-spacing: 3px;
+            text-shadow:0px 2px 3px honeydew;
+            border-radius: 75px 0px 75px 0px;
+        }
+    
+    .second-roll {
+            width: 96%;
+            /* margin:1% 0%; */
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            right: 5%;
+            font-size: 3rem;
+            border: none;
+            font-family:'LuckiestGuy';
+            text-transform: uppercase;
+           background: transparent;
+            color: goldenrod;
+            letter-spacing: 3px;
+            text-shadow:0px 2px 3px honeydew;
+        }
+    .container-roll {
+              width: 25%;
+            /* margin:1% 0%; */
+            display: block;
+            position: absolute;
+            right: 0%;
+            bottom: 0px;
+           height: 60px;
+            border: none;
+            z-index: 0;
+           background: rgba(11, 181, 8, 0.351);
+           border-radius: 0px 75px 0px 75px; 
+        }
+    .rollbackground {
+            width: 96%;
+            /* background: red; */
+            animation: lineargrade .01s;
+            animation-iteration-count:5000;
+            animation-direction: alternate-reverse;
+            animation-timing-function: ease-in-out;
+            /* position: absolute; */
+            opacity: .06;
+            padding: 0%;
+            height: 60px;
+        }
+    .next {
+            width: 100%;
+            margin:1% 0%;
+            display: block;
+            position: absolute;
+            bottom:0px;
+            font-size: 2rem;
+            border: none;
+            font-family: 'roboto-bold';
+            text-transform: uppercase;
+           /* background: rgba(11, 181, 8, 0.651);
+           */
+           /* animation: linearGradient 1s;
+            animation-iteration-count:8;
+            animation-direction: alternate-reverse; */
+        }
+    
+    .space{display: block; width: 100%; height: 180px; margin-bottom: 0%;}
+    select{width:23%;}
+    h1{ letter-spacing:5px;padding: 0%; display: block; height: 30px;font-size: 2em; 
+        color: white;background: rgba(11, 181, 8, 0.351); margin: 0px; margin-bottom:0%;}
+      /* #points {position: absolute; top:99px;left:20px;font-family:sans-serif; width: 75px; background: white; color:goldenrod; padding: 1%} */
+    
+    .points {position: absolute; top:0%;right:1%;font-family:sans-serif; text-align:right; width: 120px; background: white; color:goldenrod; padding: 1%;
+      transform-origin: (left);
+                }
+    
+
+
+
+    #timer {top: 5px; left: 5px;transform: scale(0.75);}
+
+    #timertoggle {position: absolute; font-family:sans-serif; float: right;font-size: .5em;top: 40px;
+        left: 20px;}
+    #key {position: absolute; top:83px;left:1%;font-family:sans-serif; float: right;font-size: .5em}
+    
+    
+    h2 {
+                  font-family: system-ui;
+                  letter-spacing: 5px;
+                  text-align: center;
+                  margin-bottom: 0%;
+                  padding: 0px;
+                  position: absolute;
+                  left: 41%;
+              }
+    .credits{text-transform: uppercase; letter-spacing:3px; position:absolute; top:0px; color: white; font-size: 11px;font-family: sans-serif;width:92%; text-align:center }
+    .instructions { z-index:999999;text-align: right; color: white; margin: 0%; position: absolute;top:65px; right:1%; font-size: 10px; font-family: sans-serif;}
+    #instructions {font-size: .5em; color: white} /*add color gradient */
+
+    fieldset {margin: auto auto; text-align: center; border:none; padding-top: 5px;}
+    #roll1 ,#roll2 {font-family:'philosopher'; font-size: .6em; letter-spacing: 1px;text-align: center;
+    
+        width: 85%;
+        display: block;
+        top: 5%;
+        position: relative;
+    }
+    div.dicearea {
+                      width: 96%;    
+                      /* margin:6% auto 10px; +4m */ 
+                      font-size: 2rem;
+                      font-family:'londrina';
+                      display: block;
+                      /* height: 200px; +4m */
+                      background: transparent;
+                      padding: 1%;
+                      border: 0px solid goldenrod;
+                      border-radius: 10px;
+                      transform: scale(0.75);
+                      position:absolute;
+                      /* top: 0px; */
+                      
+                  }
+              
+
+              
+    div.dice {
+                      float:left;
+                      display: block;
+                      text-align: center;
+                      font-size: 4em;
+                      width: 96%;
+                      padding: 1%;
+                      margin: 1%;
+                      border: 0px solid goldenrod;
+                      background-color: transparent;
+                      color: white;
+                      height: 120px;
+                  }
+    
+    label.question {
+                      font-family:serif;
+                      font-size: 2em;
+                      padding: 0%;
+                     width: 100%;
+                     display: block;
+                     padding-top: 0px;
+                      margin-bottom: 1%;
+                      transform: scale(0.8);
+                      position:relative;
+                      /* top: 320px;+4m */
+                      top: 0px;
+                      left: 0%;
+                      text-align: left;
+                      letter-spacing:2px;
+                  }
+         
+              
+    .question {
+        text-align: center;
+        font-family:serif;
+        font-size: 2em;
+        padding: 0%;
+        width: 60%;
+        /* display: block;
+        padding-top: 0px;
+        margin-top: 0%; */
+        transform: scale(0.8);
+        position:absolute;
+        /* top: 320px;+4m */
+        top: 160px;
+        left: 32%;
+        /* color: transparent; */
+        text-align: left;
+        letter-spacing:1px;
+        /* visibility:hidden; */
+        z-index: 0;
+        /* animation: uask 2s ease-in-out;
+        animation-iteration-count:1; */
+        /* animation-direction: alternate-reverse; */
+    }
+
+    
+    .numberx {               
+        color: transparent;
+        position: absolute;
+        letter-spacing: 15px;
+        /* margin-top:2%; */
+    /* left: -10%;
+    top: 15px; */
+    margin: 0%;
+    font-size: 25px;
+    
+        }
+
+
+.choicea li input label{color: red; width: 20%; margin: 0%; display: block; float:left}
+/* .choiceb{}
+.choicec{}
+.choiced{} */
+
+ul.ks-cboxtags li {
+    display: inline-block;
+    float: left;
+    /* width: 45%; */
+    }
+
+    }
+
+
+/*end of mobile styles*/
+
+@media only screen and (min-width:728px) { 
+    * {margin: 0px; padding: 0px}
+    html{margin: 0px; padding: 0px}
+    body{margin: 0px; padding: 0px;  border: none; color: rgba(255, 220, 100,.9);background: rgba(10, 55, 77, 1);
+        background-image: url('bacground2.png');
+        background-size: cover; 
+    } 
+    .body-double {opacity:1; width: 98%;padding: 1%;padding-top: 0px; margin: 0%; background: rgba(0,0,0,.39);border-radius:10px; color:white;
+    height: 98%; position: fixed; z-index: 9999;top:0px;
+    }
+    /* .body-double-on {width: 100%;padding: 0%; margin: 0%; background: rgba(0,0,0,.6);border-radius:10px; color:white;
+    height: 100%; position: absolute; z-index: -9999; display:block; 
+    }*/
+    .logo {
+        color: rgba(255,255,255,.81);
+        border: 0px solid white;
+        text-shadow: 0px 0px 90px white;
+        position: absolute;
+        top: 22px;
+        left:42%;
+        font-size: .4em;
+        text-align: center;
+        opacity: 1;
+        font-family: sans-serif;
+    }
+    hr {position:relative; display: block; top: -2%;left:0px; margin: 1px 0%;
+        animation: le-move 10s;
+        opacity:.25;
+        animation-iteration-count:6;
+        animation-direction: alternate-reverse; border: none;
+        transform: rotate(0deg);
+        transform-origin:0px;
+        }
+ 
+        .roll {
+        width: 25%;
+        /* margin:1% 0%; */
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        font-size: 3rem;
+        border: none;
+        font-family:'LuckiestGuy';
+        text-transform: uppercase;
+       background: transparent;
+       background: rgba(11, 181, 8, 0.351);
+       padding-top:1%;
+        color: white;
+        letter-spacing: 3px;
+        text-shadow:0px 2px 3px honeydew;
+        border-radius: 75px 0px 75px 0px;
+    }
+
+    .second-roll {
+        width: 96%;
+        /* margin:1% 0%; */
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        right: 5%;
+        font-size: 3rem;
+        border: none;
+        font-family:'LuckiestGuy';
+        text-transform: uppercase;
+       background: transparent;
+        color: goldenrod;
+        letter-spacing: 3px;
+        text-shadow:0px 2px 3px honeydew;
+    }
+    .container-roll {
+          width: 25%;
+        /* margin:1% 0%; */
+        display: block;
+        position: absolute;
+        right: 0%;
+        bottom: 0px;
+       height: 60px;
+        border: none;
+        z-index: 0;
+       background: rgba(11, 181, 8, 0.351);
+       border-radius: 0px 75px 0px 75px; 
+    }
+    .rollbackground {
+        width: 96%;
+        /* background: red; */
+        animation: lineargrade .01s;
+        animation-iteration-count:5000;
+        animation-direction: alternate-reverse;
+        animation-timing-function: ease-in-out;
+        /* position: absolute; */
+        opacity: .06;
+        padding: 0%;
+        height: 60px;
+    }
+    .next {
+        width: 100%;
+        margin:1% 0%;
+        display: block;
+        position: absolute;
+        bottom:0px;
+        font-size: 2rem;
+        border: none;
+        font-family: 'roboto-bold';
+        text-transform: uppercase;
+       /* background: rgba(11, 181, 8, 0.651);
+       */
+       /* animation: linearGradient 1s;
+        animation-iteration-count:8;
+        animation-direction: alternate-reverse; */
+    }
+
+  .space{display: block; width: 100%; height: 180px; margin-bottom: 0%;}
+  select{width:23%;}
+   h1{ letter-spacing:5px;padding: 2%; display: block; height: 35px;font-size: 2em; 
+    color: white;background: rgba(11, 181, 8, 0.351); margin: 0px; margin-bottom:3%;}
+  /* #points {position: absolute; top:99px;left:20px;font-family:sans-serif; width: 75px; background: white; color:goldenrod; padding: 1%} */
+  .points {position: absolute; top:0%;left:41%;font-family:sans-serif; text-align:right; width: 120px; background: white; color:goldenrod; padding: 1%;
+  transform-origin: (left);
+}
+ 
+
+ 
+
+  #timer {top: 95px; transform: scale(0.75);}
+
+  #timertoggle {position: absolute; top:83px;left:94%;font-family:sans-serif; float: right;font-size: .5em}
+  #key {position: absolute; top:83px;left:1%;font-family:sans-serif; float: right;font-size: .5em}
+
+
+   h2 {
+    font-family: system-ui;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 0%;
+    padding: 0px;
+    position: absolute;
+    left: 41%;
+}
+   .credits{text-transform: uppercase; letter-spacing:3px; position:absolute; top:0px; color: white; font-size: 11px;font-family: sans-serif;width:92%; text-align:center }
+    .instructions { z-index:999999;text-align: right; color: white; margin: 1%; position: absolute;top:10px; right:10px; font-size: 10px; font-family: sans-serif;}
+   #instructions {font-size: .5em; color: white} /*add color gradient */
+
+    fieldset {margin: auto auto; text-align: center; border:none; padding-top: 5px;}
+    #roll1 ,#roll2 {font-family:'philosopher'; font-size: .4em; letter-spacing: 1px;text-align: center;}
+    div.dicearea {
+        width: 42%;    
+        /* margin:6% auto 10px; +4m */ 
+        font-size: 2rem;
+        font-family:'londrina';
+        display: block;
+        /* height: 200px; +4m */
+        background: transparent;
+        padding: 1%;
+        border: 2px solid goldenrod;
+    
+        border-radius: 10px;
+        transform: scale(0.95);
+        position:absolute;
+        visibility: hidden;
+        z-index:99;
+        animation: uask 10s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 0s;
+    }
+
+
+    div.dice {
+        float:left;
+        display: block;
+        text-align: center;
+        font-size: 4em;
+        width: 96%;
+        padding: 1%;
+        margin: 1%;
+        border: 0px solid goldenrod;
+        background-color: transparent;
+        color: white;
+    }
+    label.question {
+        text-align: center;
+        font-family:serif;
+        font-size: 2em;
+        padding: 2%;
+       width: 60%;
+       display: block;
+       padding-top: 0px;
+        margin-top: 0%;
+        transform: scale(0.8);
+        position:absolute;
+        /* top: 320px;+4m */
+        top: 135px;
+        left: 30%;
+        text-align: left;
+        letter-spacing:1px;
+    }
+
+
+     
+
+    .question {
+        text-align: center;
+        font-family:serif;
+        font-size: 2em;
+        padding: 0%;
+        width: 60%;
+       /* display: block;
+       padding-top: 0px;
+        margin-top: 0%; */
+        transform: scale(0.8);
+        position:absolute;
+        /* top: 320px;+4m */
+        top: 160px;
+        left: 32%;
+        /* color: transparent; */
+        text-align: left;
+        letter-spacing:1px;
+        /* visibility:hidden; */
+        z-index: -999;
+        /* animation: uask 2s ease-in-out;
+        animation-iteration-count:1; */
+        /* animation-direction: alternate-reverse; */
+    }
+
+
+ 
+    .container {
+        max-width: 98%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 11px;
+        margin: 0% auto;
+        letter-spacing: 1px;
+    }
+
+    
+    .highlight_container {
+        max-width: 96%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 11px;
+        margin: 0% auto;
+        height: 250px;
+        width: 98%;
+        letter-spacing: 1px;
+        border: 2px solid goldenrod;
+            border-radius: 10px;
+            z-index:99;
+            transform: scale(0.95);
+            position:absolute;
+            visibility: hidden;
+
+            animation: uask 20s ease-in-out;
+            animation-iteration-count:1;
+            animation-delay: 50s;
+    }
+  
+    .q-answer {
+        width:96%;
+        font-size: 1em;
+        padding: 1%;
+        margin: 5% 0% 2%;
+        font-family:'philosopher';
+        display: none;
+        height: 0px;
+        background: transparent;
+        border:none;
+    }
+
+    .diewrap {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        position:relative;
+        width: 170px;
+        height:170px;
+        display: block;
+        float: left;
+        margin: 0% 2%;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .explain {clear:both; 
+            display: block;
+            margin: 3%;
+            position: absolute;
+            bottom: 0px;
+            padding: 3%;
+        }
+ 
+
+
+
+    #numberxholder {               
+    /* color: transparent; */
+    position: absolute;
+    /* background:black; */
+    /* padding: 0%; */
+    width: 95px;
+    /* left: 44%;
+    top: 110px; */
+    top: -31px;
+left: 130px;
+    display:inline;
+    /* height: 21px; */
+    font-size: 2.5em;
+    /* margin-bottom: 0%; */
+margin-top: 14px;
+/* padding: 0%; */
+/* overflow: hidden; */
+}
+
+
+
+.numberx {               
+    color: transparent;
+    position: absolute;
+    letter-spacing: 15px;
+    /* margin-top:2%; */
+left: -10%;
+top: 15px;
+margin: 0%;
+font-size: 25px;
+
+    }
+
+    }
+
+
+
+
+
+
+
+ 
+
+
+
+
+    .numberx::before {
+
+        content: '';
+        display: inline-block;
+        padding-top:1%;
+        background:rgba(0,0,0,1);
+    }  
+    .numberx::after {
+        content: '';
+        display: inline-block;
+
+    
+    } 
+
+
+
+
+
+
+
+
+
+.options{ position: absolute;
+        
+        }
+/* #select1{position: absolute; bottom: 200px;left:50px}
+#select2{position: absolute; bottom: 200px;left:180px}
+#select3{position: absolute; bottom: 200px;left:310px}
+#select4{position: absolute; bottom: 200px;left:430px} */
+range {width: 400px}
+#select5{position: absolute; 
+z-index: 999;right: 2%;
+bottom: 75px;
+background: goldenrod;
+border:1px solid goldenrod;
+width: 96%;} 
+#select5::before{content:'NOT MY KINDA PERSON'; position: absolute;letter-spacing:3px;font-size: .6em; bottom: 10px; left:0%; color: white; }
+#select5::after{content:'MY KINDA PERSON'; position: absolute;letter-spacing:3px;font-size: .6em; bottom: 10px; right: 0%; color: white; }
+input[type=range]::-webkit-slider-runnable-track{background:green}
+input[type=range]::-webkit-slider-thumb{background:green; border-radius: 22px; border:10px solid goldenrod; width:50px; height:50px;background:goldenrod}
+input[type=range]::-ms-track{background:green}
+input[type=range]::-ms-fill-lower{background:green}
+input[type=range]::-ms-fill-upper{background:green}
+input[type=range]::-ms-thumb {background:green; border-radius: 22px; border:10px solid goldenrod; width:50px; height:50px;background:goldenrod}
+
+/* input[type=range]::-moz-s */
+
+
+         ul.ks-cboxtags {
+            list-style: none;
+            /* padding: 20px; */
+        }
+        ul.ks-cboxtags li{
+        display: inline;
+        }
+        ul.ks-cboxtags li label{
+            display: inline-block;
+            background-color: transparent;
+            border: 1px solid rgba(139, 139, 139, .3);
+            color: #adadad;
+            border-radius: 5px;
+            white-space: nowrap;
+            margin: 2px 5px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            transition: all .2s;
+            padding: 15px 15px;
+            cursor: pointer;
+        }
+        
+
+
+        ul.ks-cboxtags li label:hover {transform: scale(1.3);background:rgba(11, 181, 8, 0.351);opacity:1}
+
+        /* ul.ks-cboxtags li label::before {
+            display: none;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 12px;
+            padding: 2px 6px 2px 2px;
+            content: "\f067";
+            transition: transform .3s ease-in-out;
+        }
+        */
+        /* ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+            content: "\f00c";
+            transform: rotate(-360deg);
+            transition: transform .3s ease-in-out;
+        } */
+        
+        ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+            border: 0px solid rgba(11, 181, 8, 0.351);
+            background-color: rgba(11, 181, 8, 0.351);
+            color: #fff;
+            transition: all .2s;
+        }
+        
+        ul.ks-cboxtags li input[type="checkbox"] {
+        display: absolute;
+        }
+        ul.ks-cboxtags li input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        }
+        ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+        border: 2px solid #e9a1ff;
+        }
+
+#q5 {            border: 2px solid rgba(229, 67, 13, 0.2675);
+            background-color: rgba(229, 67, 13, 0.275);}
+
+.hachoices{
+    /* background-color: yellow; */
+    font-size:12px;    
+    }   
+
+   
+#transitions {color: goldenrod; transition-property: color ; transition-duration: 2s; border:none;} 
+a:link  {color:white}
+a:visited > {color:white}   
+a:hover > {color:white}   
+a:active > {color:white}      
+
+
+#q6 {width: 50%}
+#q7 {width: 30%}
+#q8 {width: 30%}
+#q9 {width: 50%}
+#q13 {width: 45%}
+#q14 {width: 40%}
+/* #q22 {width: 70%} */
+   
+
+    span.additionallies {
+        font-family:serif;
+        /* font-size: .7em; */
+        display: inline;
+        /* transform: scale(0.8); */
+        /* position:absolute; */
+        color: transparent;
+        letter-spacing:1px;
+        /* display:none; */
+        visibility:hidden;
+    }
+
+    p{ text-align: left;}
+/*ins_steps_= document.getElementsbyTagName('p'); ins_steps_[0]*/
+    p:nth-of-type(1) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 0s;
+        
+    }
+
+    p:nth-of-type(2) {
+        visibility: hidden;
+        animation: uask 2s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 5s;
+    }
+
+    p:nth-of-type(3) {
+        visibility: hidden;
+        animation: uask 2s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 7s;
+    }
+
+    p:nth-of-type(4) {
+        visibility: hidden;
+        animation: uask 2s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 10s;
+    }
+
+    p:nth-of-type(5) {
+        visibility: hidden;
+        animation: uask 8s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 12s;
+    }
+
+
+
+    span.additionallies:nth-of-type(1) {
+        animation: uask 7s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 13s;
+    }
+    span.additionallies:nth-of-type(2) {
+        animation: uask 6s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 14s;
+    }
+
+    span.additionallies:nth-of-type(3) {
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 15s;
+    }
+
+
+
+    p:nth-of-type(6) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 20s;
+    }
+
+    p:nth-of-type(7) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 25s;
+    }
+
+    p:nth-of-type(8) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 30s;
+    }
+
+    p:nth-of-type(9) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 35s;
+    }
+
+    p:nth-of-type(10) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 40s;
+    }
+
+    p:nth-of-type(11) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 45s;
+    }
+
+
+    p:nth-of-type(12) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 50s;
+    }
+
+    p:nth-of-type(13) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 55s;
+    }
+
+    p:nth-of-type(14) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 60s;
+    }
+
+
+    p:nth-of-type(15) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 65s;
+    }
+
+    p:nth-of-type(16) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 70s;
+    }
+
+    p:nth-of-type(17) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 75s;
+    }
+
+    p:nth-of-type(18) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 80s;
+    }
+
+    p:nth-of-type(19) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 85s;
+    }
+
+    p:nth-of-type(20) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 90s;
+    }
+
+    p:nth-of-type(21) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 95s;
+    }
+
+    p:nth-of-type(22) {
+        visibility: hidden;
+        animation: uask 5s ease-in-out;
+        animation-iteration-count:1;
+        animation-delay: 100s;
+    }
+
+
