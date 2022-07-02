@@ -2,35 +2,47 @@
 <html>
     <head>
         <title>Title</title>
+    <!--add more meta -->
         <meta charset ="utf-8"/>
-<meta name="viewport" content="width=device-width">
-<meta name="author" content="david kene" />
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="david kene" />
         <style>
-            @font-face {font-family:'laila'; src: url('fonts/Laila/Laila-Regular.ttf'); font-weight:normal;}
+            /* @font-face {font-family:'laila'; src: url('fonts/Laila/Laila-Regular.ttf'); font-weight:normal;} */
             @font-face {font-family:'londrina'; src: url('fonts/Londrina_Outline/LondrinaOutline-Regular.ttf'); font-weight:normal;}
             @font-face {font-family:'philosopher'; src: url('fonts/Philosopher/Philosopher-Bold.ttf'); font-weight:normal;}
-            @font-face {font-family:'telex'; src: url('fonts/Telex/Telex-Regular.ttf'); font-weight:normal;}
-            @font-face {font-family:'roboto'; src: url('fonts/Roboto_Slab/RobotoSlab-Thin.ttf'); font-weight:normal;}
+            /* @font-face {font-family:'telex'; src: url('fonts/Telex/Telex-Regular.ttf'); font-weight:normal;} */
+            /* @font-face {font-family:'roboto'; src: url('fonts/Roboto_Slab/RobotoSlab-Thin.ttf'); font-weight:normal;} */
             @font-face {font-family:'LuckiestGuy'; src: url('fonts/LuckiestGuy/LuckiestGuy.ttf'); font-weight:normal;}  
-            @font-face {font-family:'roboto'; src: url('fonts/Roboto_Slab/RobotoSlab-Thin.ttf'); font-weight:normal;}
+            /* @font-face {font-family:'roboto'; src: url('fonts/Roboto_Slab/RobotoSlab-Thin.ttf'); font-weight:normal;} */
             @font-face {font-family:'roboto-bold'; src: url('fonts/Roboto_Slab/RobotoSlab-Bold.ttf'); font-weight:bold;}  
         </style>
         <style>
             /* # {}
             # {} */
-            * {margin: 0px; padding: 0px}
+            * {margin: 0px; padding: 0px; }
             html{margin: 0px; padding: 0px}
-            body{margin: 0px; padding: 0px;  border: none; color: rgba(245, 241, 241,.7);background: rgba(0, 0, 0,.8)} 
+            body{margin: 0px; padding: 0px;  border: none; color: rgba(255, 220, 100,.9);background: rgba(10, 55, 77, 1);
+            
+               
+            } 
+            .background { width: 100%;
+                height: 500px;
+                z-index: -900;
+                position: absolute;
+                top: 0px ;background-image: url('background.png');
+                background-size: cover; opacity:.05}
             hr {position:relative; display: block; bottom: 55%;left:0px; margin: 0% 0%;
                 animation: le-move 20s;
-                opacity:.35;
-                animation-iteration-count:3;
-                animation-direction: alternate-reverse; border: none}
+                opacity:.85;
+                animation-iteration-count:100;
+                animation-direction: alternate-reverse; border: none;
+                
+            }
          
-            .roll {
-                width: 100%;
+                .roll {
+                width: 25%;
                 /* margin:1% 0%; */
-                display: block;
+                display: none;
                 position: absolute;
                 bottom: 0px;
                 font-size: 3rem;
@@ -38,25 +50,40 @@
                 font-family:'LuckiestGuy';
                 text-transform: uppercase;
                background: transparent;
-                /* color: rgba(25, 94, 25,1); */
+               background: goldenrod;
+               padding-top:1%;
+                color: rgb(70, 25, 94);
                 letter-spacing: 3px;
                 text-shadow:0px 2px 3px honeydew;
             }
-            .container-roll {
-                  width: 100%;
+
+            .second-roll {
+                width: 96%;
                 /* margin:1% 0%; */
                 display: block;
                 position: absolute;
                 bottom: 0px;
+                right: 5%;
+                font-size: 3rem;
+                border: none;
+                font-family:'LuckiestGuy';
+                text-transform: uppercase;
+               background: transparent;
+                color: rgba(25, 94, 25,1);
+                letter-spacing: 3px;
+                text-shadow:0px 2px 3px honeydew;
+            }
+            .container-roll {
+                  width: 25%;
+                margin:1% auto;
+                display: block;
+                position: relative;
+                right: 0%;
+                bottom: 0px;
                height: 60px;
                 border: none;
-                z-index: -111;
-               
-                
-              
-               /* background: goldenrod; */
-              
-             
+                z-index: 1111;
+               background: goldenrod;
             }
             .rollbackground {
                 width: 96%;
@@ -66,6 +93,7 @@
                 animation-direction: alternate-reverse;
                 animation-timing-function: ease-in-out;
                 /* position: absolute; */
+                 /* z-index: -111; */
                 opacity: .06;
                 padding: 0%;
                 height: 60px;
@@ -89,14 +117,14 @@
           .space{display: block; width: 100%; height: 230px; margin-bottom: 0%;}
           select{width:23%;}
            h1{ letter-spacing:5px;padding: 2%; display: block; height: 35px;font-size: 2em; 
-            color: goldenrod;background: rgba(252, 245, 245, 0.952); margin: 0px; margin-bottom: 1%;font-family: 'londrina';}
+            color: goldenrod;background: rgba(252, 245, 245, 0.952); margin: 0px; margin-bottom: 1%;}
           #points {position: absolute; top:85px;left:20px;font-family:'LuckiestGuy'}
-          #timertoggle {position: absolute; top:85px;left:90%;font-family:'telex'; float: right;font-size: .5em}
+          #timertoggle {position: absolute; top:85px;left:90%;font-family:'philosopher'; float: right;font-size: .5em}
         
 
            h2 {font-family:'LuckiestGuy';letter-spacing:5px; text-align: center;margin-bottom: 2%;}
-           .credits{letter-spacing:1px; position:absolute; top:55px; color: goldenrod; font-size: 10px;font-family: 'telex';}
-            .instructions { text-align: right; color: goldenrod; margin: 1%; position: absolute;top:10px; right:10px; font-size: 1em; font-family: 'roboto-bold';}
+           .credits{letter-spacing:1px;text-transform: uppercase; position:absolute; top:60px; color: goldenrod; font-size: 10px;font-family: sans-serif;}
+            .instructions { text-align: right; color: goldenrod; margin: 1%; position: absolute;top:10px; right:10px; font-size: 1em; font-family:'sans-serif';}
            #instructions {font-size: .5em; color: green} /*add color gradient */
 
             fieldset {margin: auto auto; text-align: center; border:none}
@@ -127,6 +155,7 @@
                 margin: 1%;
                 border: 0px solid goldenrod;
                 background-color: transparent;
+                color: white;
             }
             label.question {
                 text-align: center;
@@ -150,7 +179,7 @@
                 font-size: 1em;
                 padding: 1%;
                 margin: 5% 0% 2%;
-                font-family:'laila';
+                font-family:'philosopher';
                 display: none;
                 height: 0px;
                 background: transparent;
@@ -858,29 +887,29 @@
     #number22 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 38.1s;}
     #number21 {visibility: hidden; color: rgba(20, 116, 60,.75); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 39.1s;}
  
-    #number20 {visibility: hidden; color: yellow;; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 40.1s;}
-    #number19 {visibility: hidden; color: yellow;; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 41.1s;}
-    #number18 {visibility: hidden; color: yellow;; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 42.1s;}
-    #number17 {visibility: hidden; color: yellow;; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 43.1s;}
-    #number16 {visibility: hidden; color: yellow;; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 44.1s;}
-    #number15 {visibility: hidden; color: yellow;; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 45.1s;}
-    #number14 {visibility: hidden; color: yellow;; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 46.1s;}
-    #number13 {visibility: hidden; color: yellow; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 47.1s;}
-    #number12 {visibility: hidden; color: yellow; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 48.1s;}
-    #number11 {visibility: hidden; color: yellow; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 49.1s;}
+    #number20 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 40.1s;}
+    #number19 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 41.1s;}
+    #number18 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 42.1s;}
+    #number17 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 43.1s;}
+    #number16 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 44.1s;}
+    #number15 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 45.1s;}
+    #number14 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 46.1s;}
+    #number13 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 47.1s;}
+    #number12 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 48.1s;}
+    #number11 {visibility: hidden; color:  rgba(234, 219, 62, 0.99); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 49.1s;}
   
     
-    #number10 {visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 50.1s;}
-    #number9 {visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 51.1s;}
-    #number8 {visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 52.1s;}
-    #number7 {visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 53.1s;}
-    #number6 {visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 54.1s;}
-    #number5 {visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 55.1s;}
-    #number4 {visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 56.1s;}
-    #number3 {visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 57.1s;}
-    #number2 {visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 58.1s;}
-    #number1 {visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 59.1s;}
-    #number0 {  visibility: hidden; color: red; animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 60.1s;}
+    #number10 {visibility: hidden; color: rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 50.1s;}
+    #number9 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 51.1s;}
+    #number8 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 52.1s;}
+    #number7 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 53.1s;}
+    #number6 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 54.1s;}
+    #number5 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 55.1s;}
+    #number4 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 56.1s;}
+    #number3 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 57.1s;}
+    #number2 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 58.1s;}
+    #number1 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 59.1s;}
+    #number0 {visibility: hidden; color:  rgba(115, 15, 15,1); animation: ucolor 1s ease-in-out; animation-iteration-count: 1;animation-delay: 60.1s;}
 
 
     
@@ -922,7 +951,7 @@
 
 
 
-
+.red {color: red}
 
  
 
@@ -951,8 +980,6 @@ input[type=range]::-ms-thumb {background:green; border-radius: 22px; border:10px
 
 /* input[type=range]::-moz-s */
 </style>
-
-
 <style>
         
         .container {
@@ -1035,10 +1062,10 @@ input[type=range]::-ms-thumb {background:green; border-radius: 22px; border:10px
        .hachoices{background-color: yellow}   
        
 #transitions {color: goldenrod; transition-property: color ; transition-duration: 2s; border:none;} 
-a:link  {color:wheat}
-a:visited > {color:grey}   
-a:hover > {color:greenyellow}   
-a:active > {color:pink}         
+a:link  {color:white}
+a:visited > {color:white}   
+a:hover > {color:white}   
+a:active > {color:white}           
 </style>
         <script>
 
@@ -1047,24 +1074,24 @@ a:active > {color:pink}
 // Mtest.document.write("<html><head><title>Title</title></head><body>test</body></html>")
 function rollDice(){
 
-    
-    
 
-    
+// session = document.baseURI;    
+
+
 die1 = document.getElementById('die1');
 die2 = document.getElementById('die2');
 var roll1 = document.getElementById('roll1');
 var roll2 = document.getElementById('roll2');
 q = document.getElementById('question');
 d1 = Math.floor(Math.random() * 6) + 1;
-d2 = Math.floor(Math.random() * 6) + 1;
+d2 = Math.floor(Math.random() * 18) + 1;
 //var diceTotal= d1 + d2;
  a ={ a : (d1 === 1) ? "H" 
         : (d1 === 2) ? "Af" 
         : (d1 === 3) ? "N" 
         : (d1 === 4) ? "As" 
         : (d1 === 5) ? "E" 
-        : (d1 === 6) ? "B" 
+        : (d1 === 6) ? "M" 
         : 0
         };
  b ={
@@ -1073,7 +1100,20 @@ d2 = Math.floor(Math.random() * 6) + 1;
         : (d2 === 3) ? "N" 
         : (d2 === 4) ? "G" 
         : (d2 === 5) ? "L" 
-        : (d2 === 6) ? "B" 
+        : (d2 === 6) ? " " 
+        : (d2 === 7) ? " " 
+        : (d2 === 8) ? " " 
+        : (d2 === 9) ? " " 
+        : (d2 === 10) ? " " 
+        : (d2 === 11) ? " " 
+        : (d2 === 12) ? " " 
+        : (d2 === 13) ? " " 
+        : (d2 === 14) ? " " 
+        : (d2 === 15) ? " " 
+        : (d2 === 16) ? " " 
+        : (d2 === 17) ? " " 
+        : (d2 === 18) ? " " 
+        : (d2 === 1) ? " " 
         : 0
         }  ;    
   
@@ -1087,15 +1127,15 @@ d2 = Math.floor(Math.random() * 6) + 1;
     : (a ==='N') ? 'Native'
     : (a ==='As') ? 'Asian'
     : (a ==='E') ? 'European'
-    : (a ==='B') ? 'bruised'
+    : (a ==='M') ? 'the masses'
     : a === 0;
     var b = x; 
-    var b = (b === 'U') ?'underage'
-    : (b === 'M') ? 'multi-racial'
-    : (b === 'N') ? 'non-binary'
-    : (b === 'G') ? 'gay'
-    : (b === 'L') ? 'lesbian'
-    : (b === 'B' ) ? 'broke'
+    var b = (b === 'U') ?'and underage'
+    : (b === 'M') ? 'and multi-racial'
+    : (b === 'N') ? 'and non-binary'
+    : (b === 'G') ? 'and gay'
+    : (b === 'L') ? 'and lesbian'
+    : (b === ' ' ) ? ' '
     : 0;
 return [a,b]
 }
@@ -1107,24 +1147,23 @@ aa = (a.a ==='H')?'H'
     : (a.a ==='N') ? 'N'
     : (a.a ==='As') ? 'A'
     : (a.a ==='E') ? 'E'
-    : (a.a ==='B') ? 'B'
+    : (a.a ==='M') ? 'M'
     :0 ;
 
 
 Hispanic = ['Hispanic','Hispanic-American','Mexican','Mexican-American','Puerto-Rican','LatinX']
-African = ['African','African-American','Black','West-Indian','Caribbean','Caribbean-Americans','Black-American']
-Asian = ['Asian','Asian-American','South-Asian','Chinese-American','Japanese-American','Korean-American','Philipino-American','Middle-Eastern-Americans']
+African = ['African','African-American','Black','West-Indian','Caribbean','Caribbean-American','Black-American']
+Asian = ['Asian','Asian-American','South-Asian','Chinese-American','Japanese-American','Korean-American','Philipino-American','Middle-Eastern-American']
 Native= ['Native','Native-American','Lenape','Montauk']
 European = ['European','European-American','White','White-American']
-Bruised = ['on the margins','working class','working poor','middle-class','essential worker']
-
+Masses = ['being on the margins','working class','working poor','middle-class','essential workers']
 ;
  longer_name = (a.a ==='H')?Hispanic[Math.floor(Math.random() * Hispanic.length)]
     : (a.a ==='Af') ? African[Math.floor(Math.random() * African.length)]
     : (a.a ==='N') ? Native[Math.floor(Math.random() * Native.length)]
     : (a.a ==='As') ? Asian[Math.floor(Math.random() * Asian.length)]
     : (a.a ==='E') ? European[Math.floor(Math.random() * European.length)]
-    : (a.a ==='B') ? Bruised[Math.floor(Math.random() * Bruised.length)]
+    : (a.a ==='M') ? Masses[Math.floor(Math.random() * Masses.length)]
     :  a.a;
  
     // longer_name = (a ==='Hispanic')?Hispanic[Math.floor(Math.random() * Hispanic.length)]
@@ -1139,10 +1178,11 @@ Bruised = ['on the margins','working class','working poor','middle-class','essen
 die1.innerHTML = aa;
 die2.innerHTML =b.b;  
 roll1.innerHTML = aa + ' as in '+c(a.a)[0];
-roll2.innerHTML = b.b+ ' as in '+c(b.b)[1];
+roll2.innerHTML = (b.b == ' ') ? ' ' 
+: b.b+ ' as in '+c(b.b)[1].slice(4);
 
 
-context = 'About a person who presents as ' + c(a.a)[0]+' and ' +c(b.b)[1];
+context = 'About a person who presents as ' + c(a.a)[0]+c(b.b)[1];
 w_ = ['when', 'where','what', 'why'];
 wtype = [Math.floor(Math.random() * 4)]
 
@@ -1150,247 +1190,163 @@ wtype = [Math.floor(Math.random() * 4)]
 
 
 
-q_ = [
-q1 = " Question 1 is about H...",
-q2 =" Question 2 is about U...",
-q3 =" Question 3 is about M...",
-q4 =" Question 4 is about A...",
-q5 =" Question 5 is about N...",
-q6 =" Question 6 is about A...",
-q7 =" Question 7 is about N...",
-q8 =" Question 8 is about G...",
-q9 =" Question 9 is about E...",
-q10 =" Question 10 is about L...",
-q11 =" Question 11 is about 0...",
-q12 =" Question 12 is about 0..."
-];
+// q_ = [
+// q1 = " Question 1 is about H...",
+// q2 =" Question 2 is about U...",
+// q3 =" Question 3 is about M...",
+// q4 =" Question 4 is about A...",
+// q5 =" Question 5 is about N...",
+// q6 =" Question 6 is about A...",
+// q7 =" Question 7 is about N...",
+// q8 =" Question 8 is about G...",
+// q9 =" Question 9 is about E...",
+// q10 =" Question 10 is about L...",
+// q11 =" Question 11 is about 0...",
+// q12 =" Question 12 is about 0..."
+// ];
 
 q1 = document.getElementsByClassName('hachoices');
 
 q2 = document.getElementsByTagName('li');
 
-// q1 = document.getElementById('q1');
-q1[0].textContent = (wtype == 0) ? 'not a relevant question'
-    : (wtype == 1) ? 'not a relevant question'
-    : (wtype == 2) ? 'not a relevant question'
-    : (wtype == 3) ? 'not a relevant question'
-    : 0;
-
-// q2 = document.getElementById('q2');
-q1[1].textContent = (wtype == 0)?'Mornings'
-: (wtype == 1) ? 'everywhere'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'My ideal client'
-: 0;
+z1 = document.querySelectorAll('input')
 
 
-// q3 = document.getElementById('q3');
-q1[2].textContent = (wtype == 0)?'Mid-day'
-: (wtype == 1) ? 'Nationally'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'limted supply'
-: 0;
 
 
-// q4 = document.getElementById('q4');
-q1[3].textContent = (wtype == 0)?'Afternoon'
-: (wtype == 1) ? '[city location]'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'High Demand'
-: 0;
+
+    z1[0].setAttribute('value',q1[0].textContent);
+// z1[0].setAttribute('name',q1[0].textContent);
+    z1[1].setAttribute('value',q1[1].textContent);
+// z1[1].setAttribute('name',q1[1].textContent);
+    z1[2].setAttribute('value',q1[2].textContent);
+// z1[2].setAttribute('name',q1[2].textContent);
+    z1[3].setAttribute('value',q1[3].textContent);
+// z1[3].setAttribute('name',q1[3].textContent);
+    z1[4].setAttribute('value',q1[4].textContent);
+// z1[4].setAttribute('name',q1[4].textContent);
+    z1[5].setAttribute('value',q1[5].textContent);
+// z1[5].setAttribute('name',q1[5].textContent);
+    z1[6].setAttribute('value',q1[6].textContent);
+// z1[6].setAttribute('name',q1[6].textContent);
+    z1[7].setAttribute('value',q1[7].textContent);
+// z1[7].setAttribute('name',q1[7].textContent);
+    z1[8].setAttribute('value',q1[8].textContent);
+// z1[8].setAttribute('name',q1[8].textContent);
+    z1[8].setAttribute('value',q1[8].textContent);
+// z1[8].setAttribute('name',q1[8].textContent);
+    z1[9].setAttribute('value',q1[9].textContent);
+// z1[9].setAttribute('name',q1[9].textContent);
+    z1[10].setAttribute('value',q1[10].textContent);
+// z1[10].setAttribute('name',q1[10].textContent);
+    z1[11].setAttribute('value',q1[11].textContent)
+// z1[11].setAttribute('name',q1[11].textContent);
+    z1[12].setAttribute('value',q1[12].textContent);
+// z1[12].setAttribute('name',q1[12].textContent);
+    z1[13].setAttribute('value',q1[13].textContent);
+// z1[13].setAttribute('name',q1[13].textContent);
+    z1[14].setAttribute('value',q1[14].textContent);
+// z1[14].setAttribute('name',q1[14].textContent);
+    z1[15].setAttribute('value',q1[15].textContent);
+// z1[15].setAttribute('name',q1[15].textContent);
+    z1[16].setAttribute('value',q1[16].textContent);
+// z1[16].setAttribute('name',q1[16].textContent);
+z1[17].setAttribute('value',q1[17].textContent);
+// z1[17].setAttribute('name',q1[17].textContent);
 
 
-// q5 = document.getElementById('q5');
-q1[4].textContent = (wtype == 0)?'Evening'
-: (wtype == 1) ? 'in a crowd'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'Best Supply'
-: 0;
-
-// q6 = document.getElementById('q6');
-q1[5].textContent = (wtype == 0) ? 'Night'
-: (wtype == 1) ? 'in a car'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'VIP'
-: 0;
-
-// next group
-// q7 = document.getElementById('q7');
-q1[6].textContent = (wtype == 0)?'Daily'
-: (wtype == 1) ? 'at home'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'It benefits them'
-: 0;
-
-// q8 = document.getElementById('q8');
-q1[7].textContent = (wtype == 0)?'Weekly'
-: (wtype == 1) ? 'at work'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'they earn money'
-: 0;
-
-// q9 = document.getElementById('q9');
-q1[8].textContent = (wtype == 0)?'Monthly'
-: (wtype == 1) ? 'at school'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'they feel good'
-: 0;
-
-// q10 = document.getElementById('q10');
-q1[9].textContent = (wtype == 0)?'throughout the day'
-: (wtype == 1) ? 'in public'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'our interests align'
-: 0;
-
-// q11 = document.getElementById('q11');
-q1[10].textContent = (wtype == 0)?'throughout the night'
-: (wtype == 1) ? 'in private'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'our values align'
-: 0;
-
-// q12 = document.getElementById('q12');
-q1[11].textContent = (wtype == 0)?'weekdays'
-: (wtype == 1) ? 'in a bedroom'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'marketed to them'
-: 0;
-
-// next group
-// q13 = document.getElementById('q13');
-q1[12].textContent = (wtype == 0)?'weeknights'
-: (wtype == 1) ? 'in a bathroom'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'they know us'
-: 0;
-
-// q14 = document.getElementById('q14');
-q1[13].textContent = (wtype == 0)?'weekends'
-: (wtype == 1) ? 'in a kitchen'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'we know them'
-: 0;
-
-// q15 = document.getElementById('q15');
-q1[14].textContent = (wtype == 0)?'during lunch'
-: (wtype == 1) ? 'in an office'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'trust'
-: 0;
-
-// q16 = document.getElementById('q16');
-q1[15].textContent = (wtype == 0)?'during dinner'
-: (wtype == 1) ? 'in a store'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'affordable'
-: 0;
-
-// q17 = document.getElementById('q17');
-q1[16].textContent = (wtype == 0)?'during breakfast'
-: (wtype == 1) ? 'in transit'
-: (wtype == 2) ? 'Good Question'
-: (wtype == 3) ? 'exclusive'
-: 0;
-
-// q18 = document.getElementById('q18');
-q1[17].textContent = (wtype == 0)?'let me explain...'
-: (wtype == 1) ? 'let me explain...'
-: (wtype == 2) ? 'let me explain...'
-: (wtype == 3) ? 'let me explain...'
-: 0;
-
-
-_oulda = [" could", " should", " would", " wouldn't", " shouldn't"]
+_oulda = [" could ", " should ", " would ", " wouldn\'t ", " shouldn\'t "]
 oulda = _oulda[Math.floor(Math.random() * 5)]
 
-_is = [" identifies as ", " presents as ", " is actively against people considered ",  " supports people considered "]
-iS = _is[Math.floor(Math.random() * 4)]
+
+// xyz.innerHTML = "<i>" +_oulda[0] +"</i>"
+// xyz = _coulda.innerHTML 
+
+_is = [" identifies as ", " is ", " is actively against people considered ",  " supports people considered "]
+that_is = _is[Math.floor(Math.random() * 4)]
 
 
-_it = ["business", "stuff", "product(s)", "service(s)"]
+_it = ["goods", "stuff", "product(s)", "service(s)"]
 it = _it[Math.floor(Math.random() * 4)]
 
-thisperson = longer_name+' and ' +c(b.b)[1]
+thisperson = (c(b.b)[1] == ' ') ? longer_name+c(b.b)[1]
+: longer_name+" "+c(b.b)[1]
 
-_noun =[' person who', ' company that', ' community that']
+_noun =[' person who', ' family who', ' household that']
 noun =_noun[Math.floor(Math.random() * 3)]
 
-// when
-s0 = "Tell " +w_[0]+noun+iS+thisperson + oulda + " want your " + it+".";
-// where
-s1 = "Tell " +w_[1]+" a person who identifies as "+thisperson + oulda + "use your " + it;
-
-s1a = "Tell " +w_[1]+" a person who identifies as "+thisperson + oulda + "use your " + it;
-//what 
-s4 = "Tell " +w_[2]+" a person who identifies as "+thisperson + oulda + "use your " + it;
-
-s5 = "Tell " +w_[2]+" a person who identifies as "+thisperson + oulda + "use your " + it;
-//why
-s1 = "Tell " +w_[3]+" a person who identifies as "+thisperson+ _oulda[2] + "dislike your " + it;
-
-s2 = "Tell " +w_[3]+" a person who identifies as "+thisperson + _oulda[2] + "like your " + it;
-
-s3 = "Tell " +w_[3]+" a person who identifies as "+thisperson + oulda + "use your " + it;
-
+// when w_[0]
+// where w_[1]
+//what w_[2]
+//why w_[3]
 
 value = [
-"To a "+noun+iS+thisperson+ " tell what distinguishes your "+ it+" from others.",
-"Tell "+w_[wtype]+" a"+noun+iS+thisperson + " benefits from using your " + it+".",
-"Tell " +w_[0]+" a"+noun+iS+thisperson + oulda + " want your " + it+".",
-oulda[1].toLocaleUpperCase()+oulda.slice(2)+" you do business with " +w_[0]+" a"+noun+iS+thisperson +  "?",
-w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+iS+thisperson+" use your "+it+"?",
-w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+iS+thisperson+" use your "+it+"?",
-w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your"+it+ oulda+" a"+noun+iS+thisperson+" like?",
-w_[0][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a"+noun+iS+thisperson+"  use your "+it+"?",
-w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+iS+thisperson+" need your "+it+"?",
-w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your"+it+ oulda+" a"+noun+iS+thisperson+" find useful?",
-"Would you consider a"+noun+iS+thisperson+" as an ideal client?"
+"Tell " +w_[0] + " a"+noun+that_is+thisperson + oulda + " want your " + it+".",    
+"To a "+noun+that_is+thisperson+ " tell what distinguishes your "+ it+" from others.",
+"Tell "+w_[wtype]+" a"+noun+that_is+thisperson + " could benefit from using your " + it+".",
+"Tell " +w_[0]+" a"+noun+that_is+thisperson + oulda + " want your " + it+".",
+// oulda[1].toLocaleUpperCase()+oulda.slice(2)+" you do business with a"+noun+that_is+thisperson +  "?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" use your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" use your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your "+it+ oulda+" a"+noun+that_is+thisperson+" like?",
+w_[0][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a"+noun+that_is+thisperson+"  use your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" need your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your "+it+ oulda+" a"+noun+that_is+thisperson+" find useful?",
+"Would you consider a"+noun+that_is+thisperson+" as an ideal client? Why?"
 
 ]
 ;
 revenue = [
-w_[wtype][0].toLocaleUpperCase()+w_[wtype].slice(1)+oulda+" a"+noun+iS+thisperson+" buy your "+it+"?"
+w_[wtype][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" buy your "+it+"?",
+w_[wtype][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" buy your "+it+"?",
+w_[wtype][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a"+noun+that_is+thisperson+" buy your "+it+"?"
 ]
 ;
 digest = [
-"What reviews would a"+noun+iS+thisperson+" give about your "+it+"?",
-w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+iS+thisperson+" <i>like</i> your "+it+"?",
-w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+iS+thisperson+" like your "+it+"?",
-w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your"+it+ oulda+" a"+noun+iS+thisperson+" like?",
-w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+iS+thisperson+" dislike your "+it+"?",
-w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+iS+thisperson+" dislike your "+it+"?",
-w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your"+it+ oulda+" a"+noun+iS+thisperson+" not like?",
-w_[0][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a"+noun+iS+thisperson+" dislike your "+it+"?",
-"How frequently "+oulda+" a"+noun+iS+thisperson+" use your "+it+"?"
+"What reviews would a"+noun+that_is+thisperson+" give about your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" like your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" like your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your "+it+ oulda+" be liked by a"+noun+that_is+thisperson+"?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" not like to use your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" not like to use your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[2].slice(1)+ " about your "+it+ oulda+" a"+noun+that_is+thisperson+" not like?",
+w_[0][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a"+noun+that_is+thisperson+" not like to use your "+it+"?",
+"How frequently "+oulda+" a"+noun+that_is+thisperson+" use your "+it+"?"
 ]
 ;
 
 discover = [
-w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a curious"+noun+iS+thisperson+" find your "+it+"?",
-w_[1][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a curious"+noun+iS+thisperson+" find your "+it+"?",
-w_[2][0].toLocaleUpperCase()+w_[2].slice(1)+oulda+" a curious"+noun+iS+thisperson+" find out about your "+it+"?",
-w_[3][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a curious"+noun+iS+thisperson+" find your "+it+"?",
-w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" an inspired"+noun+iS+thisperson+" share your "+it+"?",
-w_[1][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" an inspired"+noun+iS+thisperson+" share your "+it+"?",
-w_[2][0].toLocaleUpperCase()+w_[2].slice(1)+" about your "+it +oulda+" an inspired"+noun+iS+thisperson+" share?",
-w_[3][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" an inspired"+noun+iS+thisperson+" review your "+it +"?",
-w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+iS+thisperson+" recommend your "+it+"?",
-w_[1][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+iS+thisperson+" recommend your "+it+"?",
-w_[2][0].toLocaleUpperCase()+w_[2].slice(1)+" about your "+it +oulda+" an "+noun+iS+thisperson+" recommend?",
-w_[3][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+noun+iS+thisperson+" recommend your "+it+"?"
+"Tell " +w_[0]+noun+that_is+thisperson + oulda + " want your " + it+".",    
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a curious"+noun+that_is+thisperson+" find your "+it+"?",
+w_[1][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a curious"+noun+that_is+thisperson+" find your "+it+"?",
+w_[2][0].toLocaleUpperCase()+w_[2].slice(1)+oulda+" a curious"+noun+that_is+thisperson+" find interesting about your "+it+"?",
+w_[3][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a curious"+noun+that_is+thisperson+" find your "+it+"?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" an inspired"+noun+that_is+thisperson+" share your "+it+"?",
+w_[1][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" an inspired"+noun+that_is+thisperson+" share your "+it+"?",
+"An inspired"+noun+that_is+thisperson+oulda+"share "+w_[2]+" about your "+it+"?",
+w_[3][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" an inspired"+noun+that_is+thisperson+" review your "+it +"?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" recommend your "+it+"?",
+w_[1][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" recommend your "+it+"?",
+w_[2][0].toLocaleUpperCase()+w_[2].slice(1)+" about your "+it +oulda+" a "+noun+that_is+thisperson+" recommend?",
+w_[3][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+noun+that_is+thisperson+" recommend your "+it+"?"
 ]
 
 purpose = [
-"Did you have in mind"+" a"+noun+iS+thisperson+" when you created your "+it+"?",
-"Would you consider a"+noun+iS+thisperson+" as an ideal client?",
-"Would a"+noun+iS+thisperson+" use your "+it+" differently than other people? How?",
-"Would a"+noun+iS+thisperson+" access your "+it+" differently than other people? How?",
-w_[0][0].toLocaleUpperCase()+w_[0].slice(0)+oulda+" a"+noun+iS+thisperson+" experience your "+it+" differently than you intended?",
-w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+iS+thisperson+" experience your "+it+" differently than you intended?",
-w_[0][0].toLocaleUpperCase()+w_[0].slice(3)+oulda+" a"+noun+iS+thisperson+" experience your "+it+" different than you intended?"
+"Tell " +w_[0]+" a person who identifies as "+thisperson + oulda + " use your " + it+".",
+"Tell " +w_[1]+" a person who identifies as "+thisperson + oulda + " use your " + it+".",
+"Tell " +w_[2]+" use your " + it +   oulda + "be to a person who identifies as "+thisperson +".",
+"Tell " +w_[2]+" a person who identifies as "+thisperson + oulda + " do with your " + it+".",
+"Tell " +w_[3]+" a person who identifies as "+thisperson+ _oulda[2] + " dislike your " + it+".",
+"Tell " +w_[3]+" a person who identifies as "+thisperson + _oulda[2] + " like your " + it+".",
+"Tell " +w_[3]+" a person who identifies as "+thisperson + oulda + " use your " + it+".",
+"Did you have in mind"+" a"+noun+that_is+thisperson+" when you created your "+it+"?",
+"Would you consider a"+noun+that_is+thisperson+" as an ideal client? Why?",
+"Would a"+noun+that_is+thisperson+" use your "+it+" differently than other people? How?",
+"Would a"+noun+that_is+thisperson+" access your "+it+" differently than other people? How?",
+w_[0][0].toLocaleUpperCase()+w_[0].slice(1)+oulda+" a"+noun+that_is+thisperson+" experience your "+it+" differently than you intended?",
+w_[0][0].toLocaleUpperCase()+w_[1].slice(1)+oulda+" a"+noun+that_is+thisperson+" experience your "+it+" differently than you intended?",
+w_[0][0].toLocaleUpperCase()+w_[3].slice(1)+oulda+" a"+noun+that_is+thisperson+" experience your "+it+" differently than you intended?"
 ]
-
 
 
 // questions = (a.a === 'H') ? q_[Math.floor(Math.random() * 11) + 1]
@@ -1406,25 +1362,312 @@ w_[0][0].toLocaleUpperCase()+w_[0].slice(3)+oulda+" a"+noun+iS+thisperson+" expe
 // : (b.b === '0') ? q11 
 // : (a.a === '0') ? q12 
 // : 0;
-q_[Math.floor(Math.random() * 11) + 1]
+// q_[Math.floor(Math.random() * 11) + 1]
 
 qtypes = [
-qpurpose = purpose[Math.floor(Math.random() * 7)]
+qpurpose = purpose[Math.floor(Math.random() * 14)]
 ,
 qdigest = digest[Math.floor(Math.random() * 9) ]
 ,
-qdiscover = discover[Math.floor(Math.random() * 12)]
+qdiscover = discover[Math.floor(Math.random() * 13)]
 ,
-qrevenue = revenue[Math.floor(Math.random() * 0)]
+qrevenue = revenue[Math.floor(Math.random() * 3)]
 ,
-qvalue = value[Math.floor(Math.random() * 10)]
+qvalue = value[Math.floor(Math.random() * 11)]
 ]
 
-qtypeNumber = [Math.floor(Math.random() * 4)]
-questions = qtypes[qtypeNumber];
+qtypeNumber = [Math.floor(Math.random() * qtypes.length)]
+const questions = qtypes[qtypeNumber];
 
 q.textContent =  questions;//questions;
+
+z1[19].setAttribute('value',questions);
+// a0= document.getElementById('thequestion');
+// a0.setAttribute('name', 'Query');
+// a0.setAttribute('value', questions);
+// a0.textContent = questions;
+
+
+q1[0].textContent = (wtype == 0) ? 'not a relevant question'
+    : (wtype == 1) ? 'not a relevant question'
+    : (wtype == 2) ? 'not a relevant question'
+    : (wtype == 3) ? 'not a relevant question'
+    : 0;
+
+q1[1].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Mornings'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'everywhere'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'My ideal client'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;    
+
+q1[2].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'Mid-day'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'nationally'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'limted supply'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[3].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Afternoons'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? '[city location]'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'High Demand'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My dideal client'
+: 0;
+
+q1[4].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Evenings'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in a crowd'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'my product was made for them'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[5].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Nights'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in a car'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'They are VIP'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[6].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Daily' 
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'at home' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'It benefits them'    
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[7].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'Weekly'    
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'at work'   
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ?  'they earn money'   
+
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[8].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Monthly'   
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'at school' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ?  'they feel good'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My dideal client'
+: 0;
+
+q1[9].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'throughout the day'   
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in public' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'our interests align'  
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[10].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'throughout the night' 
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in private' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'our values align'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My dideal client'
+: 0;
+
+q1[11].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ?'Weekdays'    
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in a bedroom'  
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'I really market to them'   
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My dideal client'
+: 0;
+
+q1[12].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'Weeknights'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in a bathroom' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'they know us'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[13].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'Weekends'   
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')?  'in a kitchen'  
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'we know them' 
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My dideal client'
+: 0;
+
+q1[14].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'during lunch' 
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in an office'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ?  'we have trust'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[15].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'during dinner' 
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')?  'in a store' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'Good Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'affordable' 
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[16].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'during breakfast' 
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'in transit' 
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'gGood Question'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'exclusive'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'My ideal client'
+: 0;
+
+q1[17].textContent = (q.textContent.match(/when/i) == 'when' || q.textContent.match(/when/i) == 'When') ? 'let me explain...'
+: (q.textContent.match(/where/i) == 'Where' || q.textContent.match(/where/i) =='where')? 'let me explain...'
+: (q.textContent.match(/what/i) == 'what' || q.textContent.match(/what/i) == 'What')? 'let me explain...'
+: (q.textContent.match(/why/i) == 'Why' || q.textContent.match(/why/i) =='why') ? 'let me explain...'
+: (q.textContent.match(/how/i) == 'How' || q.textContent.match(/how/i) =='how')? 'let me explain...'
+: 0;
+
+
+
+
+// NEED TO FIX FROM HERE
+game = document.location.search.split('+')
+game = game.join(' ')
+
+
+ aha = (game == ''|| game =="?written=") ? questions : game ;
+
+
+
+answer = 
+{'z0' : (z1[0].checked) ? z1[0].value : ''
+,
+'z1' : (z1[1].checked) ? z1[1].value : ''
+,
+'z2' : (z1[2].checked) ? z1[2].value : ''
+,
+'z3' : (z1[3].checked) ? z1[3].value : ''
+,
+'z4' : (z1[4].checked) ? z1[4].value : ''
+,
+'z5' : (z1[5].checked) ? z1[5].value : ''
+,
+'z6' : (z1[6].checked) ? z1[6].value : ''
+,
+'z7' : (z1[7].checked) ? z1[7].value : ''
+,
+'z8' : (z1[8].checked) ? z1[8].value : ''
+,
+'z9' : (z1[9].checked) ? z1[9].value : ''
+,
+'z10' : (z1[10].checked) ? z1[10].value : ''
+,
+'z11' : (z1[11].checked) ? z1[11].value : ''
+,
+'z12' : (z1[12].checked) ? z1[12].value : ''
+,
+'z13' : (z1[13].checked) ? z1[13].value : ''
+,
+'z14' : (z1[14].checked) ? z1[14].value : ''
+,
+'z15' : (z1[15].checked) ? z1[15].value : ''
+,
+'z16' : (z1[16].checked) ? z1[16].value : ''
+,
+'z17' : (z1[17].checked) ? z1[17].value : ''
+// ,
+// 'z18' : (z1[18].checked) ? z1[18].value : ''
 }
+
+session = { aha , answer}
+storeGame(session);
+return session;
+}
+// end of above function
+
+function storeGame(s){
+const y= s;
+x = document.lastModified;
+const xy ={'a_timestamp: ':x, 'b_question: ':y.aha, 'c_answers: ':y.answer};
+ttt = [];
+ttt.push(xy); 
+qb4 = ttt[0]["b_question: "]
+qnow =z1[19].value
+
+
+d = document.location.search.concat('?'+document.location.pathname+qnow)
+// _a0 = (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game.html') ? qnow : _a0
+// _b1 = (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game1.html') ? qnow : _b1
+// _c2 = (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game2.html') ? qnow : _c2
+
+_a0 = (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game.html') ? qnow 
+        : (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game1.html') ? qnow 
+        : (document.location.pathname == '/Users/davidkene/Desktop/dice%20game/dice-game2.html') ? qnow 
+        : qb4
+
+const an = ttt[0]["b_question: "]
+// const xc = ttt[0]["b_question: "]
+// const fin = $1;
+// ttt.unshift(fin); 
+z1 = document.querySelectorAll('input')  
+,   
+(z1[0].checked) ? z1[0].checked = false : z1[0].checked = false
+,
+(z1[1].checked) ? z1[1].checked = false : z1[1].checked = false
+,
+(z1[2].checked) ? z1[2].checked = false : z1[2].checked = false
+,
+(z1[3].checked) ? z1[3].checked = false : z1[3].checked = false
+,
+(z1[4].checked) ? z1[4].checked = false : z1[4].checked = false
+,
+(z1[5].checked) ? z1[5].checked = false : z1[5].checked = false
+,
+(z1[6].checked) ? z1[6].checked = false : z1[6].checked = false
+,
+(z1[7].checked) ? z1[7].checked = false : z1[7].checked = false
+,
+(z1[8].checked) ? z1[8].checked = false : z1[8].checked = false
+,
+(z1[9].checked) ? z1[9].checked = false : z1[9].checked = false
+,
+(z1[10].checked) ? z1[10].checked = false : z1[10].checked = false
+,
+(z1[11].checked) ? z1[11].checked = false : z1[11].checked = false
+,
+(z1[12].checked) ? z1[12].checked = false : z1[12].checked = false
+,
+(z1[13].checked) ? z1[13].checked = false : z1[13].checked = false
+,
+(z1[14].checked) ? z1[14].checked = false : z1[14].checked = false
+,
+(z1[15].checked) ? z1[15].checked = false : z1[15].checked = false
+,
+(z1[16].checked) ? z1[16].checked = false : z1[16].checked = false
+,
+(z1[17].checked) ? z1[17].checked = false : z1[17].checked = false
+,
+(z1[18].checked) ? z1[18].checked = false : z1[18].checked = false
+
+
+return ttt;
+}
+
+
+
+
+//new function
+// function hold(session){
+// const game= session;
+// all = [];
+// // all.push(game);
+// all.unshift(game);
+// // all[0].
+// all.push(document.location.search);
+// all.push(storeGame());
+// all.push(game);
+
+// return all; 
+// }
+//end of function
+
+
+
+
+// function uncheck(){
+
+// return 
+
+// }
+// NEED TO FIX TO HERE
+
 // Math.floor(Math.random() * 4) + 1
 
 
@@ -1509,9 +1752,10 @@ AND WHAT DEVICES AND SOFTWARE CONSIDERATIONS THAT PERSON REQUIRES IN GENERAL. HO
 */
         </script>
     </head>
-    <body>
+    <body onload="rollDice()">
+      <div class="background"></div>
         <hr/>
-        <h1> H.U.M.A.N. A.N.G.E.L.S.<br/> <span class="credits">the Q&A game by Human Angel Tech | Los Human Angeles </span></h1>
+        <h1><a href="https://github.com/humanangel/random-bias-business-checker?human-angel-tech"> RANDOM BIAS BUSINESS CHECKER</a><br/> <span class="credits">a beta business improvement tool by Human Angel Tech </span></h1>
         
        <p class="instructions" onclick="toggle_visibility('instructions'), align_right('instructions');"> how to play<!-- <img src="READMORE.svg" style="width: 15%;opacity:.6">   -->
             <span id="instructions" style="display: none">
@@ -1629,121 +1873,54 @@ AND WHAT DEVICES AND SOFTWARE CONSIDERATIONS THAT PERSON REQUIRES IN GENERAL. HO
         <h2 id="status" style="clear:left"></h2>
         <div class="space"> </div>
         <hr/>
-        <form name="qanda"id="records" action="dice-game.html" method="GET" > 
+        <form name="qanda"id="records" action="dice-game1.html" method="GET" > 
             <fieldset>
-                <label id="question" class="question" > Press Play to Start this Game</label>
+                <label id="question" class="question" onsubmit="rollDice(), storeGame()"> Press Play to Start this Game</label>
                
                 <br/>
-                <!-- <select>
-                    <optgroup>
-                        <option class="options" id="select1">choice one</option>
-                        <option class="options" id="select2">choice two</option>
-                        <option class="options" id="select3">choice three</option>
-                        <option class="options" id="select4">choice four</option>
-                    </optgroup>
-                </select> -->
-             <!--   
-                  <select id="select1" size="10">
-                    <optgroup>
-                        <option class="options" id="option1">YES</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option2">GREAT</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option3">IT WAS MADE FOR THEM</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option4">choice four</option>
-                    </optgroup>
-                </select>
-                <select id="select2" size="10">
-                    <optgroup>
-                        <option class="options" id="option5">OKAY</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option6">choice two</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option7">choice three</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option8">choice four</option>
-                    </optgroup>
-                </select>
-                <select id="select3" size="10">
-                    <optgroup>
-                        <option class="options" id="option9">MAYBE</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option10">NOT BAD</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option11">NOT GOOD</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option12">choice four</option>
-                    </optgroup>
-                </select>
-                <select id="select4" size="10">
-                    <optgroup>
-                        <option class="options" id="option13">NO</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option14">THEY BECOME MORE SAVVY</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option15">choice three</option>
-                    </optgroup>
-                    <optgroup>
-                        <option class="options" id="option16">choice four</option>
-                    </optgroup>
-                </select>
-              
-            
-                   
-                   <input id="select5" name="rr"type="range" min="0" max="100"/>
-        --> 
-                       
+        
         <div class="container">
-            <ul class="ks-cboxtags">
-                <li><input type="checkbox" id="checkboxOne" value="Rainbow Dash"><label id="q1" class="hachoices" for="checkboxOne">TBD</label></li> <!--checked-->
-                <li><input type="checkbox" id="checkboxTwo" value="Cotton Candy" ><label id="q2" class="hachoices" for="checkboxTwo">TBD</label></li>
-                <li><input type="checkbox" id="checkboxThree" value="Rarity" ><label id="q3" class="hachoices" for="checkboxThree">TBD</label></li>
-                <li><input type="checkbox" id="checkboxFour" value="Moondancer"><label id="q4" class="hachoices" for="checkboxFour">TBD</label></li>
-                <li><input type="checkbox" id="checkboxFive" value="Surprise"><label id="q5" class="hachoices" for="checkboxFive">TBD</label></li>
-                <li><input type="checkbox" id="checkboxSix" value="Twilight Sparkle"  ><label id="q6"  class="hachoices" for="checkboxSix">TBD</label></li>
+            <ul class="ks-cboxtags" name="choicea">
+                <li><input  name ="irrelevant" type="checkbox" id="checkboxOne" ><label id="q1" class="hachoices" for="checkboxOne"></label></li> <!--checked-->
+                <li><input  name ="answer2" type="checkbox" id="checkboxTwo"  ><label id="q2" class="hachoices" for="checkboxTwo"></label></li>
+                <li><input  name ="answer3" type="checkbox" id="checkboxThree" ><label id="q3" class="hachoices" for="checkboxThree"></label></li>
+                <li><input  name ="answer4" type="checkbox" id="checkboxFour" ><label id="q4" class="hachoices" for="checkboxFour"></label></li>
+                <li><input  name ="answer5" type="checkbox" id="checkboxFive"><label id="q5" class="hachoices" for="checkboxFive"></label></li>
+                <li><input  name ="answer6" type="checkbox" id="checkboxSix"   ><label id="q6"  class="hachoices" for="checkboxSix"></label></li>
             </ul>
-            <ul class="ks-cboxtags">    
-                <li><input type="checkbox" id="checkboxSeven" value="Rainbow Dash"><label id="q7" class="hachoices" for="checkboxSeven">TBD</label></li> <!--checked-->
-                <li><input type="checkbox" id="checkboxEight" value="Cotton Candy" ><label id="q8" class="hachoices" for="checkboxEight">TBD</label></li>
-                <li><input type="checkbox" id="checkboxNine" value="Rarity" ><label id="q9" class="hachoices" for="checkboxNine">TBD</label></li>
-                <li><input type="checkbox" id="checkboxTen" value="Moondancer"><label id="q10" class="hachoices" for="checkboxTen">TBD</label></li>
-                <li><input type="checkbox" id="checkboxEleven" value="Surprise"><label id="q11" class="hachoices" for="checkboxEleven">TBD</label></li>
-                <li><input type="checkbox" id="checkboxTwelve" value="Twilight Sparkle"  ><label id="q12" class="hachoices" for="checkboxTwelve">TBD</label></li>
+            <ul class="ks-cboxtags" name="choiceb">    
+                <li><input  name ="answer7" type="checkbox" id="checkboxSeven" value="Rainbow Dash"><label id="q7" class="hachoices" for="checkboxSeven"></label></li> <!--checked-->
+                <li><input  name ="answer8" type="checkbox" id="checkboxEight"  ><label id="q8" class="hachoices" for="checkboxEight"></label></li>
+                <li><input  name ="answer9" type="checkbox" id="checkboxNine" ><label id="q9" class="hachoices" for="checkboxNine"></label></li>
+                <li><input  name ="answer10" type="checkbox" id="checkboxTen" ><label id="q10" class="hachoices" for="checkboxTen"></label></li>
+                <li><input  name ="answer11" type="checkbox" id="checkboxEleven"><label id="q11" class="hachoices" for="checkboxEleven"></label></li>
+                <li><input  name ="answer12" type="checkbox" id="checkboxTwelve"   ><label id="q12" class="hachoices" for="checkboxTwelve"></label></li>
             </ul>
-            <ul class="ks-cboxtags"> 
-                <li><input type="checkbox" id="checkboxThirteen" value="Rainbow Dash"><label id="q13" class="hachoices" for="checkboxThirteen">TBD</label></li> <!--checked-->
-                <li><input type="checkbox" id="checkboxFourteen" value="Cotton Candy" ><label id="q14" class="hachoices" for="checkboxFourteen">TBD</label></li>
-                <li><input type="checkbox" id="checkboxFifteen" value="Rarity" ><label id="q15"  class="hachoices" for="checkboxFifteen">TBD</label></li>
-                <li><input type="checkbox" id="checkboxSixteen" value="Moondancer"><label id="q16"  class="hachoices" for="checkboxSixteen">TBD</label></li>
-                <li><input type="checkbox" id="checkboxSeventeen" value="Surprise"><label id="q17"  class="hachoices" for="checkboxSeventeen">TBD</label></li>
-                <li><input type="checkbox" id="checkboxEighteen" value="Twilight Sparkle"><label id="q18"  class="hachoices" for="checkboxEighteen">TBD</label></li>               
+            <ul class="ks-cboxtags" name="choicec"> 
+                <li><input name ="answer13" type="checkbox" id="checkboxThirteen" value="Rainbow Dash"><label id="q13" class="hachoices" for="checkboxThirteen"></label></li> <!--checked-->
+                <li><input name ="answer14" type="checkbox" id="checkboxFourteen"  ><label id="q14" class="hachoices" for="checkboxFourteen"></label></li>
+                <li><input name ="answer15" type="checkbox" id="checkboxFifteen" ><label id="q15"  class="hachoices" for="checkboxFifteen"></label></li>
+                <li><input name ="answer16" type="checkbox" id="checkboxSixteen" ><label id="q16"  class="hachoices" for="checkboxSixteen"></label></li>
+                <li><input name ="answer17" type="checkbox" id="checkboxSeventeen"><label id="q17"  class="hachoices" for="checkboxSeventeen"></label></li>
+                <li><input name ="answer18" type="checkbox" id="checkboxEighteen" ><label id="q18"  class="hachoices" for="checkboxEighteen"></label></li>               
             </ul>
-          
+          <!--name="written"--> 
           </div>     
-                <input type="text" title="" size="20" value="" id="q-answer" class="q-answer"/>
+                 <input type="text" title="" size="20" value="" id="q-answer" class="q-answer"/>
                 <!-- <hr/> -->
                 <br/>
              
             </fieldset>
-            <input type="submit" for="qanda" value ="NEXT" id="buttn1" onclick="rollDice()" class="roll "/>
+            <!-- <input  name="choicee" type="submit" for="qanda" value ="NEXT" id="buttn1"  class="roll "/> -->
+              <button  onsubmit="rollDice()" class="roll ">NEXT</button>
+        <input  name ="END_ANSWERS_FOR_QUESTION1__START_QUESTION1__" id="thequestion" type="hidden" />
         </form>
+        <!-- <input name="choicee" type="submit" for="qanda" value ="NEXT" id="buttn1" onclick="rollDice()" class="roll "/> -->
         <!-- onclick="rollDice() , startTimer()"  -->
         <div class="container-roll">     
         <div class="rollbackground"> </div> 
         
-        <!-- <button id="buttn1" onclick="rollDice() , startTimer()" class="roll "><a id="transitions" href="#transitions">PLAY</a></button> -->
+        <button id="buttn1" onclick="  rollDice() , startTimer()" class="second-roll"><!--<a id="transitions" href="#transitions">--> PLAY<!--</a>--></button>
     </div> 
 <script>
 
